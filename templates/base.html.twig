@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% block current_css %}{% endblock %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            {% block current_javascript %}{% endblock %}
+            
+        {% endblock %}
+    </head>
+    
+        {% block body %}
+<header>
+                    <nav id="navbar">
+                    <a href="{{ path('app_homepage') }}" class="logo"
+                        aria-label="visit homepage"
+                        aria-current="page"><img src={{ asset('../assets/img/fly_PNG3950.png')}} alt="Bzzz icon">
+                        <span> Flies everywhere </span>
+                    </a>
+                            <div class="nav-links">
+                                    <button class="hamburger" type="button"
+                                        aria-label="Toggle navigation"
+                                        aria-expanded="false">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </button>
+                            </div>
+                            <div class="navlinks-container">
+                                    <a href="#" aria-current="page"Home</a>
+                                    <a href="{{ path('app_merch') }}">Merch</a>
+                                    <a href="{{ path('app_dates') }}">Dates</a>
+                                    <a href="{{ path('app_contact') }}">Contact</a>
+                                    <a href="{{ path('app_this1312') }}">1312</a>
+                            </div>
+                            <div>
+                                <a href="#" class="user_toggler"
+                                aria-label="Sign in page">
+                                <img src="./assets/img/fly_PNG3950.png" alt="user_icon">
+                                </a>
+
+<div>
+                                <a href="#" class="user_toggler"
+                                aria-label="Sign in page">
+                                <img src="./assets/img/fly_PNG3950.png" alt="user_icon">
+                                </a>
+
+                                <div class="signs-btns">
+                                <a href="{{ path('app_register') }}">
+                                
+                                    <button type="button">Sign In</button>
+                                </a>
+                                <a href="{{ path('app_security') }}">
+                                    <button type="button">Sign Up</button>
+                                </a>
+                                </div>
+                            </div>
+                </nav>
+</header>
+        {% endblock %}
+    
+</html>

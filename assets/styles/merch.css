@@ -1,0 +1,147 @@
+*,
+::before,
+::after{
+ box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'Empiric Roman';
+    src: url(/assets/Font/empiric_roman/EMPORO.TTF);
+}
+body{
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* background: #312a2a; */
+    height: 1320px;
+    background-color: black;
+
+
+}
+main{
+    height: 1320px;
+}
+nav {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    background: #131212d3;
+    box-shadow: inset 0px -1px 0px #c5c5c600;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.logo span{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    margin-left: 10px;
+    font-weight: 400;
+    color: #333;
+}
+
+.logo img {
+    width: 40px;
+    transform: rotate(-2deg) translate(3px);
+}
+.hamburger {
+    display: none;
+}
+.navlinks-container a {
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #686868;
+    display: inline-block;
+    position: relative;
+}
+
+.navlinks-container a::after{
+    content: "";
+    cursor: alias;
+    display: block;
+    position: relative;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: #333;
+    transition: 0.3s ease-out;
+
+}
+
+.navlinks-container a:hover::after{
+    transform: scaleX(1)
+}
+
+.nav-authentication{
+    margin-left: auto;
+}
+
+
+img{
+    width: 20px;
+
+}
+
+.merch-container1{
+    display: grid;
+    grid-column: 1;
+    height: 250px;
+    
+}
+
+/* .merch-container2{
+    margin-left: 150px;
+    display: inline-block;
+    width: 1420px;
+    height: 250px;
+    background-color: grey;
+    justify-self: center;
+}
+
+.merch-container3{
+    margin-left: 150px;
+    display: inline-block;
+    width: 1420px;
+    height: 250px;
+    background-color: grey;
+    justify-self: center;
+}
+
+.merch-container4{
+    margin-left: 150px;
+    display: inline-block;
+    width: 1420px;
+    height: 250px;
+    
+    justify-self: center;
+} */
+
+#merch1C1{
+    background-color: grey;
+    margin: 20px;
+    width: 25%;
+    height: 100px;
+}
+#merch2C1{
+    background-color: grey;
+    margin: 20px;
+    height: 100px;
+}
+#merch3C1{
+    background-color: grey;
+    margin: 20px;
+    height: 100px;
+}
+#merch4C1{
+    background-color: grey;
+    margin: 20px;
+    height: 100px;
+}

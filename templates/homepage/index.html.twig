@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+{% block title %} Milao {% endblock %}
+
+{% block body %}
+
+<header>
+                    <nav id="navbar">
+                    <a href="{{ path('app_homepage') }}" class="logo"
+                        aria-label="visit homepage"
+                        aria-current="page"><img src=<img src="{{ asset('../assets/img/fly_PNG3950.png')}}" alt="Bzzz icon">
+                        <span> Flies everywhere </span>
+                    </a>
+                            <div class="nav-links">
+                                    <button class="hamburger" type="button"
+                                        aria-label="Toggle navigation"
+                                        aria-expanded="false">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </button>
+                            </div>
+                            <div class="navlinks-container">
+                                    <a href="#" aria-current="page"Home</a>
+                                    <a href="{{ path('app_merch') }}">Merch</a>
+                                    <a href="{{ path('app_dates') }}">Dates</a>
+                                    <a href="{{ path('app_contact') }}">Contact</a>
+                                    <a href="{{ path('app_this1312') }}">1312</a>
+                            </div>
+                            <div>
+                                <a href="#" class="user_toggler"
+                                aria-label="Sign in page">
+                                <img src="./assets/img/fly_PNG3950.png" alt="user_icon">
+                                </a>
+
+
+                                <div class="signs-btns">
+                                <a href="{{ path('app_register') }}">
+                                
+                                    <button type="button">Sign In</button>
+                                </a>
+                                <a href="{{ path('app_security') }}">
+                                    <button type="button">Sign Up</button>
+                                </a>
+                                </div>
+                            </div>
+                </nav>
+</header>
+
+<main>
+
+
+    <section id="container">
+        <button class="previous">Avant</button>
+
+        <figure>
+            {# <img src="./assets/img/n.jpg" alt=""> #}
+            <img src="{{ asset('/public/img/n.jpg') }}" alt="Symfony!"/>
+            <figcaption>Milao flies everywhere</figcaption>
+        </figure>
+
+        <figure>
+            {# <img src="./assets/img/0068.pgn" alt=""> #}
+            <img src="{{ asset('/assets/img/0068.png') }}" alt="Symfony!"/>
+            <figcaption>Animal in forest</figcaption>
+        </figure>
+
+        <figure>
+            {# <img src="./assets/img/0000.pgn" alt=""> #}
+            <img src="{{ asset('/img/0000.png') }}" alt="Symfony!"/>
+            <figcaption>The hostel</figcaption>
+        </figure>
+
+    {# <div class="caroussel">
+        <ul>
+            <li class="slide">
+                <img src={{ asset('img/n.jpg') }}
+                <img src="./assets/img/0068.png" alt="forest shid">
+                <img src="./assets/img/0000.png" alt="3D hd">
+
+            </li>
+        </ul>
+    </div> #}
+    <button class="next">Après</button>
+</section>
+
+<script src="script.js"></script>  
+
+</main>
+
+<footer>
+</footer>
+
+{% endblock %}
+
+{% block current_javascript %}
+{{ encore_entry_script_tags('carrousel') }}
+{% endblock %}
+
