@@ -1,64 +1,50 @@
 {% extends 'base.html.twig' %}
+{% block current_css %}
+    {# <link rel="stylesheet" href="{{ asset('asset/style/merch.css') }}"> #}
+          {{ encore_entry_link_tags('app') }}
+{% endblock %}
 
-{% block title %}Se connecter{% endblock %}
+{% block title %}
+Se connecter|
+{{ parent() }}
+{% endblock %}
 
 {% block body %}
+		<div class="container">
+			<form action="{{ path('app_security')}}" method="post" class="formLog">
 
-<header>
-                    <nav id="navbar">
-                    <a href="{{ path('app_homepage') }}" class="logo"
-                        aria-label="visit homepage"
-                        aria-current="page"><img src="./Assets/img/fly_PNG3950.png" alt="Bzzz icon">
-                        <span> Flies everywhere </span>
-                    </a>
-                            <div class="nav-links">
-                                    <button class="hamburger" type="button"
-                                        aria-label="Toggle navigation"
-                                        aria-expanded="false">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </button>
-                            </div>
-                            <div class="navlinks-container">
-                                    <a href="#" aria-current="page"Home</a>
-                                    <a href="{{ path('app_merch') }}">Merch</a>
-                                    <a href="{{ path('app_dates') }}">Dates</a>
-                                    <a href="{{ path('app_contact') }}">Contact</a>
-                                    <a href="{{ path('app_this1312') }}">1312</a>
-                            </div>
-                            <div>
-                                <a href="#" class="user_toggler"
-                                aria-label="Sign in page">
-                                <img src="./assets/img/fly_PNG3950.png" alt="user_icon">
-                                </a>
-
-<div>
-                                <a href="#" class="user_toggler"
-                                aria-label="Sign in page">
-                                <img src="./assets/img/fly_PNG3950.png" alt="user_icon">
-                                </a>
-
-                                <div class="signs-btns">
-                                <a href="{{ path('app_register') }}">
-                                
-                                    <button type="button">Sign In</button>
-                                </a>
-                                <a href="{{ path('app_security') }}">
-                                    <button type="button">Sign Up</button>
-                                </a>
-                                </div>
-                            </div>
-                </nav>
-</header>
-<main>
-    <div class="container">
-
-    {{ form_start(LoginFormType)}}
+				{% if error %}
+					<div class="alert" role="alert">{{
+                    error.messageKey|trans(error.messageData, 'security')
+                }}
+					</div>
+				{% endif %}
 
 
+				<h1 class="title">
+					Se connecter
+				</h1>
 
-    {{ form_end(LoginFormType)}}
-    </div>
-</main>
+                
+				<label for="username" class="form-label">
+					Username
+				</label>
+				<input type="text" id="username" name="_username" value="{{ last_username }}"/>
+
+
+				<label for="password" class="form-label">
+					Mot de passe
+				</label>
+				<input type="password" id="password" name="_password" class="form-control">
+
+                
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+
+				<div class="subLog">
+					<button type="submit" class="btn">
+						Se connecter</button>
+				</div>
+			</form>
+
 {% endblock %}

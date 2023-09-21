@@ -29,6 +29,7 @@ class AppFixtures extends Fixture
         ->setRoles(["ROLE_ADMIN"])
         ->setTelephone(0666666)
         ->setPassword($this->hasher->hashPassword($user, 'test1234'));
+        
         $manager->persist($user);
         $manager->flush();
      }

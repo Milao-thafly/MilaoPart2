@@ -2,15 +2,19 @@
 
 namespace App\Entity;
 
-use App\Repository\UserRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use App\Repository\UserRepository;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
+#[UniqueEntity(fields: ['email'], message: "L'email est déjà utilisé par un autre compte")]
+#[UniqueEntity(fields: ['username'], message: "Le username est déjà utilisé par un autre compte")]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -21,7 +25,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 180, unique: true)]
     private ?string $username = null;
 
-  
     /**
      * @var string The hashed password
      */
@@ -47,7 +50,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private array $roles = [];
         
     #[ORM\Column(length: 260, unique: true)]
-    #[Gedmo\Slug(fields: ['id', 'titre'])]
+    #[Gedmo\Slug(fields: ['username'])]
     private $slug = null;
     
     #[ORM\Column(type: 'datetime_immutable')]
@@ -56,13 +59,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'datetime_immutable')]
     #[Gedmo\Timestampable(on: 'update')]
-    private ?\Datetime $updated_at = null;
+    private ?\DateTimeImmutable $updated_at = null;
 
-    #[ORM\ManyToOne(inversedBy: 'User')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Product $product = null;
-
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: product::class)]
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Product::class)]
     private Collection $Product;
 
     public function __construct()
@@ -229,31 +228,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getUpdatedAt(): ?\DateTime
+    public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updated_at;
     }
 
-    public function setUpdatedAt(\DateTime $updated_at): static
+    public function setUpdatedAt(\DateTimeImmutable $updated_at): static
     {
         $this->updated_at = $updated_at;
 
         return $this;
     }
 
-    public function getProduct(): ?Product
-    {
-        return $this->product;
-    }
-
-    public function setProduct(?Product $product): static
-    {
-        $this->product = $product;
-
-        return $this;
-    }
-
-    public function addProduct(product $product): static
+    public function addProduct(Product $product): static
     {
         if (!$this->Product->contains($product)) {
             $this->Product->add($product);
@@ -263,7 +250,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function removeProduct(product $product): static
+    public function removeProduct(Product $product): static
     {
         if ($this->Product->removeElement($product)) {
             // set the owning side to null (unless already changed)

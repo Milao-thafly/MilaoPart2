@@ -30,8 +30,8 @@ class MerchController extends AbstractController
     #[IsGranted('ROLE_ADMIN')]
     public function createArticle(Request $request, EntityManagerInterface $em,)
     {
-        setlocale(LC_TIME,['fr', 'fra', 'fr_FR']);
-        date_default_timezone_set('Europe/Paris');
+        // setlocale(LC_TIME,['fr', 'fra', 'fr_FR']);
+        // date_default_timezone_set('Europe/Paris');
 
         
         $product = new Product();
@@ -45,8 +45,8 @@ class MerchController extends AbstractController
 
             $em->persist($product);
             $em->flush();
-            // $this->addFlash('success', 'Article créé avec succès');
-            // return $this->redirectToRoute('home_index');
+            $this->addFlash('success', 'Produit créé avec succès');
+            return $this->redirectToRoute('app_homepage');
         }
 
         return $this->render('merch/merchCreate.html.twig', [

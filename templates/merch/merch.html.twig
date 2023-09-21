@@ -47,43 +47,21 @@
                                 <div class="signs-btns">
                                 <a href="{{ path('app_register') }}">
                                 
-                                    <button type="button">Sign In</button>
+                                    <button type="button" id="button-register">Sign In</button>
                                 </a>
                                 <a href="{{ path('app_security') }}">
-                                    <button type="button">Sign Up</button>
+                                    <button type="button" id="button-login">Sign Up</button>
                                 </a>
                                 </div>
                             </div>
                 </nav>
 </header>
 <main>
-        <div class="merch-container1">
-            <div id="merch1C1"></div>
-            <div id="merch2C1"></div>
-            <div id="merch3C1"></div>
-            <div id="merch4C1"></div>
-        </div>
-
-        <div class="merch-container2">
-            <div id="merch1C2"></div>
-            <div id="merch2C2"></div>
-            <div id="merch3C2"></div>
-            <div id="merch4C2"></div>
-        </div>
-
-        <div class="merch-container3">
-            <div id="merch1C3"></div>
-            <div id="merch2C3"></div>
-            <div id="merch3C3"></div>
-            <div id="merch4C3"></div>
-        </div>
-
-        <div class="merch-container4">
-            <div id="merch1C4"></div>
-            <div id="merch2C4"></div>
-            <div id="merch3C4"></div>
-            <div id="merch4C4"></div>
-        </div>
-
+{% for product in product %}
+    <div class="merch">
+        <a href="{{path ('app_merch', {id: product.id}) }}">{{ product.name }}</a>
+        <p>{{ product.price }}</p>
+    </div>
+{% endfor %}
 </main>
 {% endblock %}
