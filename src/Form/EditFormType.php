@@ -12,7 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-class ProductFormType extends AbstractType
+class EditFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -48,8 +48,8 @@ class ProductFormType extends AbstractType
                 'label' => 'Image',
             ])
 
-            ->add('Creer', SubmitType::class, [
-                'label' => 'Creer: '
+            ->add('Save', SubmitType::class, [
+                'label' => 'Sauvegarder:'
             ]);
 
 

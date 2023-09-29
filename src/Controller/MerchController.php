@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Product;
+use App\Form\EditFormType;
 use App\Form\ProductFormType;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -18,7 +19,7 @@ class MerchController extends AbstractController
     {
         $product = $repoProduct->findAll();
         //A faire vérifier que je récupère ce que je veux avec le var
-        var_dump($product);
+
 
         return $this->render('merch/merch.html.twig', [
             // 'controller_name' => 'MerchController',
@@ -28,7 +29,7 @@ class MerchController extends AbstractController
 
     #[Route('/merch/create', name: 'home_createProduct')]
     #[IsGranted('ROLE_ADMIN')]
-    public function createArticle(Request $request, EntityManagerInterface $em,)
+    public function createProduct(Request $request, EntityManagerInterface $em)
     {
         // setlocale(LC_TIME,['fr', 'fra', 'fr_FR']);
         // date_default_timezone_set('Europe/Paris');
@@ -40,8 +41,8 @@ class MerchController extends AbstractController
         $form->handleRequest($request);
 
         if ($form-> isSubmitted() && $form->isValid()) {
-            // $idUser = $this -> getUser() -> getId();
-            // $product -> setIdAuthor($idUser);
+            $idUser = $this -> getUser();
+            $product -> setUser_Id($idUser);
 
             $em->persist($product);
             $em->flush();
@@ -60,7 +61,14 @@ class MerchController extends AbstractController
     {
         $currentUser = $this->getUser() -> getId();
 
-        $form = $this->createForm(ProductFormType::class, $product);
+        // if ($currentUser !== $product->getUser_Id()) {
+        //     throw $this->createAccessDeniedException();
+        //     $this->addFlash('error', 'Vous n/etes pas connecté');
+        // }
+
+        $product = $repoProduct->find($id);
+
+        $form = $this->createForm(EditFormType::class, $product);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
@@ -69,8 +77,8 @@ class MerchController extends AbstractController
             $em->flush();
         }
 
-        return $this->render('edit/merchEdit.html.twig', [
-            'productForm' => $form->createView(),
+        return $this->render('merch/merchEdit.html.twig', [
+            'form' => $form->createView(),
             'id' => $id
         ]);
     }
@@ -79,6 +87,11 @@ class MerchController extends AbstractController
     #[IsGranted('ROLE_ADMIN')]
     public function deleteProduct(Product $product, ProductRepository $repoProduct, Request $request)
     {
+        $user= $this->getUser();
+        if ($user !== $product->getUser_Id()){
+            $this->addFlash('error', 'Vous n/êtes pas connecté');
+        }
+
         if ($this->isCsrfTokenValid('delete' . $product->getId(), $request->get('_token'))) {
             $repoProduct->remove($product,true);
             $this->addFlash('success', 'Product supprimé avec succès');
@@ -94,7 +107,6 @@ class MerchController extends AbstractController
     public function show(ProductRepository $repoProduct, int $id): Response
     {
         $product = $repoProduct->find($product);
-        var_dump($product);
         return $this->render('merch/merchRead.html.twig', [
             'product' => $product,
         ]);

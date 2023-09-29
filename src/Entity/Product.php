@@ -2,10 +2,14 @@
 
 namespace App\Entity;
 
+use App\Entity\Product;
 use Doctrine\ORM\Mapping as ORM;
-use Vich\UploaderBundle\Entity\File;
+use Gedmo\Mapping\Annotation\Slug;
 use App\Repository\ProductRepository;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Timestampable\Timestampable;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\Common\Collections\ArrayCollection;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
@@ -36,18 +40,32 @@ class Product
     #[ORM\Column]
     private ?int $discount_id = null;
 
+
+
+    // #[ORM\Column(length: 255, unique:true)]
+    // #[Gedmo\Slug(fields: ['id' ])]
+    // private $slug;
+    
+
+
     #[ORM\Column]
+    #[Gedmo\Timestampable(on: 'create')]
     private ?\DateTimeImmutable $created_at = null;
 
     #[ORM\Column]
+    #[Gedmo\Timestampable(on: 'update')]
     private ?\DateTimeImmutable $modified_at = null;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $deleted_at = null;
 
+
+
     #[ORM\ManyToOne(inversedBy: 'Product')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
+
+
 
     #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'imageName', size: 'imageSize')]
     private ?File $imageFile = null;
@@ -62,17 +80,21 @@ class Product
     {
         $this->imageFile = $imageFile;
 
-        if (null !== $imageFile) {
+        // if (null !== $imageFile) {
 
-            $this->modified_at = new \DateTimeImmutable();
+        //     $this->modified_at = new \DateTimeImmutable();
 
-        }
+        // }
     }
 
     public function getImageFile(): ?File
     {
         return $this->imageFile;
     }
+    
+    /**
+     * Get the value of imageName
+     */ 
 
     public function getImageName()
     {
@@ -92,13 +114,6 @@ class Product
     public function getImageSize(): ?int
     {
         return $this->imageSize;
-    }
-
-    public function __construct()
-    {
-        
-        $this->products = new ArrayCollection();
-        $this->User = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -214,39 +229,39 @@ class Product
         return $this;
     }
 
-    public function getUser(): ?self
+    public function getUser_Id(): ?User
     {
         return $this->user;
     }
 
-    public function setUser(?self $user): static
+    public function setUser_Id(?User $user): self
     {
         $this->user = $user;
 
         return $this;
     }
 
-    public function addUser(self $user): static
-    {
-        if (!$this->user->contains($user)) {
-            $this->user->add($user);
-            $user->setUser($this);
-        }
+    // public function addUser(self $user): static
+    // {
+    //     if (!$this->user->contains($user)) {
+    //         $this->user->add($user);
+    //         $user->setUser($this);
+    //     }
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
-    public function removeUser(self $user): static
-    {
-        if ($this->user->removeElement($user)) {
-            // set the owning side to null (unless already changed)
-            if ($user->getUser() === $this) {
-                $user->setUser(null);
-            }
-        }
+    // public function removeUser(self $user): static
+    // {
+    //     if ($this->user->removeElement($user)) {
+    //         // set the owning side to null (unless already changed)
+    //         if ($user->getUser() === $this) {
+    //             $user->setUser(null);
+    //         }
+    //     }
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
 
 
@@ -268,7 +283,7 @@ class Product
         return $this;
     }
 
-    public function removeProduct(self $product): static
+    public function remove(self $product): static
     {
         if ($this->products->removeElement($product)) {
             // set the owning side to null (unless already changed)
@@ -292,8 +307,8 @@ class Product
         return $this;
     }
 
-    /**
-     * Get the value of imageName
-     */ 
+
+
+
 
 }

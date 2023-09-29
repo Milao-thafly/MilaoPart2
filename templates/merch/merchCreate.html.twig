@@ -8,58 +8,12 @@
 {% endblock %}
 
 {% block body %}
-<header>
-                    <nav id="navbar">
-                    <a href="{{ path('app_homepage') }}" class="logo"
-                        aria-label="visit homepage"
-                        aria-current="page"><img src="./Assets/img/fly_PNG3950.png" alt="Bzzz icon">
-                        <span> Flies everywhere </span>
-                    </a>
-                            <div class="nav-links">
-                                    <button class="hamburger" type="button"
-                                        aria-label="Toggle navigation"
-                                        aria-expanded="false">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </button>
-                            </div>
-                            <div class="navlinks-container">
-                                    <a href="#" aria-current="page"Home</a>
-                                    <a href="{{ path('app_merch') }}">Merch</a>
-                                    <a href="{{ path('app_dates') }}">Dates</a>
-                                    <a href="{{ path('app_contact') }}">Contact</a>
-                                    <a href="{{ path('app_this1312') }}">1312</a>
-                            </div>
-                            <div>
-                                <a href="#" class="user_toggler"
-                                aria-label="Sign in page">
-                                <img src="./assets/img/fly_PNG3950.png" alt="user_icon">
-                                </a>
 
-<div>
-                                <a href="#" class="user_toggler"
-                                aria-label="Sign in page">
-                                <img src="./assets/img/fly_PNG3950.png" alt="user_icon">
-                                </a>
-
-                                <div class="signs-btns">
-                                <a href="{{ path('app_register') }}">
-                                
-                                    <button type="button" id="button-register">Sign In</button>
-                                </a>
-                                <a href="{{ path('app_security') }}">
-                                    <button type="button" id="button-login">Sign Up</button>
-                                </a>
-                                </div>
-                            </div>
-                </nav>
-</header>
 <main>
 {{ form_start(form) }}
 
 {{ form_end(form) }}
-<a href="{{path('app_merch') }}" class="createArticleButton">Créer un article.</a>
+{# <a href="{{path('app_merch') }}" class="createArticleButton">Créer un article.</a> #}
 
 </main>
 {% endblock %}
