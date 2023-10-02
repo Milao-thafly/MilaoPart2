@@ -17,13 +17,13 @@ class MerchController extends AbstractController
     #[Route('/merch', name: 'app_merch')]
     public function index(ProductRepository $repoProduct): Response
     {
-        $product = $repoProduct->findAll();
+        $products = $repoProduct->findAll();
         //A faire vérifier que je récupère ce que je veux avec le var
 
 
         return $this->render('merch/merch.html.twig', [
             // 'controller_name' => 'MerchController',
-            'product' => $product,
+            'products' => $products,
         ]);
     }
 
@@ -85,7 +85,7 @@ class MerchController extends AbstractController
 
     #[Route('/merch/delete/{id}', name: 'home_deleteProduct', methods: 'POST')]
     #[IsGranted('ROLE_ADMIN')]
-    public function deleteProduct(Product $product, ProductRepository $repoProduct, Request $request)
+    public function deleteProduct(Product $product, ProductRepository $repoProduct, Request $request, EntityManagerInterface $em)
     {
         $user= $this->getUser();
         if ($user !== $product->getUser_Id()){
@@ -93,10 +93,12 @@ class MerchController extends AbstractController
         }
 
         if ($this->isCsrfTokenValid('delete' . $product->getId(), $request->get('_token'))) {
-            $repoProduct->remove($product,true);
+            $em->remove($product,true);
+            $em->flush();
+
             $this->addFlash('success', 'Product supprimé avec succès');
 
-            return $this->redirectToRoute('merch/merch.html.twig');
+            return $this->redirectToRoute('app_merch');
 
         }
         $this->addFlash('error', 'Le token n\'est pas valide');

@@ -15,12 +15,15 @@
 </div>
 {% endfor %}
 
-<main>
-{% for product in product %}
+<main
+
+
+{% for product in products %}
     <div class="merch">
         <a href="{{path ('home_editProduct', {id: product.id}) }}">{{ product.name }}</a>
         <p>{{ product.name }}</p>
     </div>
+    
 {% endfor %}
 </main>
 {% endblock %}
