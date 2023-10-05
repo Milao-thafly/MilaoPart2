@@ -26,7 +26,7 @@ Encore
     .addEntry('carrousel', './assets/Javascript/carrousel.js')
     .addStyleEntry('merchCreate', './assets/styles/merchCreate.css')
     .addStyleEntry('contact', './assets/styles/contact.css')
-    .addStyleEntry('merch', './assets/styles/app.css')
+    .addStyleEntry('merch', './assets/styles/merch.css')
     .addStyleEntry('help', './assets/styles/help.css')
 
 

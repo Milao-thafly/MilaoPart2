@@ -23,7 +23,7 @@ main{
 }
 nav {
     position: fixed;
-    width: 100%;
+    width: 1850px;
     display: flex;
     align-items: center;
     padding: 15px 25px;
@@ -84,11 +84,15 @@ nav {
     margin-left: auto;
 }
 
-
 img{
     width: 20px;
+}
+
+.carouselImg{
+    background-size: cover;
 
 }
+
 
 .merch-container1{
     display: grid;

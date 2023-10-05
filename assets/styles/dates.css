@@ -26,7 +26,7 @@
     }
     nav {
         position: fixed;
-        width: 100%;
+        width: 1850px;
         display: flex;
         align-items: center;
         padding: 15px 25px;
@@ -498,8 +498,13 @@ height:10px;
 
 img{
     width: 20px;
+}
+
+.carouselImg{
+    background-size: cover;
 
 }
+
 #h1Date{
     width: 1700px;
     border-top: 2px solid rgba(255, 255, 255, 0.568);

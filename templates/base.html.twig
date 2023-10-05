@@ -2,28 +2,35 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>
-			{% block title %}Welcome!
-			{% endblock %}
-		</title>
-		<link rel="icon" href="../assets/img/fly_PNG3950.png_">
+
+
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 			{% block current_css %}{% endblock %}
 		{% endblock %}
 
+
 		{% block javascripts %}
 			{{ encore_entry_script_tags('app') }}
 			{% block current_javascript %}{% endblock %}
-
 		{% endblock %}
+
+
+
+		<title>
+			{% block title %}Milao
+			{% endblock %}
+		</title>
+
+
 		<meta name="" content="Welcome in Milao ressel ticket and merch and give news">
 		<meta charset="UTF-8">
 	</head>
 	<body>
 		<header>
 			<nav id="navbar">
-				<a href="{{ path('app_homepage') }}" class="logo" aria-label="visit homepage" aria-current="page"><img src="{{ asset('../assets/img/fly_PNG3950.png')}}" alt="Bzzz icon">
+				<a href="{{ path('app_homepage') }}" class="logo" aria-label="visit homepage" aria-current="page">
+				<img id="bzzzIcon" src="{{ asset('./img/fly_PNG3950.png')}}" alt="Bzzz icon">
 					<span>
 						Flies everywhere
 					</span>
@@ -42,13 +49,10 @@
 					<a href="{{ path('app_help') }}">1312</a>
 				</div>
 				<div>
-					<a href="#" class="user_toggler" aria-label="Sign in page">
-						<img src="./assets/img/fly_PNG3950.png" alt="user_icon">
-					</a>
 
 					<div>
 						<a href="#" class="user_toggler" aria-label="Sign in page">
-							<img src="./assets/img/fly_PNG3950.png" alt="user_icon">
+							<img id="loginIcon" src="{{ asset('./img/fly_PNG3950.png')}}" alt="Bzzz icon">
 						</a>
 
 						<div class="signs-btns">

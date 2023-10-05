@@ -4,6 +4,11 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
+
+        {% block javascripts %}
+			{{ encore_entry_script_tags('carrousel') }}
+		{% endblock %}
+
 {% block title %} Milao {% endblock %}
 
 {% block body %}
@@ -12,41 +17,23 @@
 <main>
 
 
-    <section id="container">
-        <button class="previous">Avant</button>
+    <ul id="container">
+<button id="left-btn"><i class="arrow"></i></button>
+        <li>
+            <img class="carrouselImg" src="{{ asset('/img/n.jpg') }}" alt="Milao!"/>
+        </li>
 
-        <figure>
-            {# <img src="./assets/img/n.jpg" alt=""> #}
-            <img src="{{ asset('/public/img/n.jpg') }}" alt="Symfony!"/>
-            <figcaption>Milao flies everywhere</figcaption>
-        </figure>
+        <li>
+            <img class="carrouselImg" src="{{ asset('/img/Forest.png') }}" alt="Animal!"/>
+        </li>
 
-        <figure>
-            {# <img src="./assets/img/0068.pgn" alt=""> #}
-            <img src="{{ asset('/assets/img/0068.png') }}" alt="Symfony!"/>
-            <figcaption>Animal in forest</figcaption>
-        </figure>
+        <li>
+            <img class="carrouselImg" src="{{ asset('/img/hostel.png') }}" alt="pray"/>
+        </li>
+<button id="right-btn"><i class="arrow"></i></button>
 
-        <figure>
-            {# <img src="./assets/img/0000.pgn" alt=""> #}
-            <img src="{{ asset('/img/0000.png') }}" alt="Symfony!"/>
-            <figcaption>The hostel</figcaption>
-        </figure>
+</ul>
 
-    {# <div class="caroussel">
-        <ul>
-            <li class="slide">
-                <img src={{ asset('img/n.jpg') }}
-                <img src="./assets/img/0068.png" alt="forest shid">
-                <img src="./assets/img/0000.png" alt="3D hd">
-
-            </li>
-        </ul>
-    </div> #}
-    <button class="next">Après</button>
-</section>
-
-<script src="script.js"></script>  
 
 </main>
 
@@ -55,7 +42,5 @@
 
 {% endblock %}
 
-{% block current_javascript %}
-{{ encore_entry_script_tags('carrousel') }}
-{% endblock %}
+
 

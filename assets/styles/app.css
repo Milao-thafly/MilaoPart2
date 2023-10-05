@@ -26,7 +26,7 @@ main{
 }
 nav {
     position: sticky;
-    width: 100%;
+    width: 1850px;
     display: flex;
     align-items: center;
     padding: 15px 25px;
@@ -105,6 +105,15 @@ nav {
     overflow: hidden;
 
 }
+
+#bzzzIcon{
+    width: 40px;
+}
+
+#loginIcon{
+    width: 20px;
+
+}
 #button-register{
         position:absolute;
         right: 2rem;
@@ -138,90 +147,60 @@ nav {
                 -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 
-img{
-    width: 20px;
 
-}
-/*
-header{
-    height: 25vh;
-    width: 100vw;
-    background-image: url(../Lsdream.png);
-    background-size:cover;
 
-    
-    
-
-}
-#navbar{
-    position: absolute;
-    text-decoration: none;
-    list-style: none;
-    padding:50px;
-    
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
+.carrouselImg{
     width: 100%;
-    box-sizing: border-box;
+
+    background-size: cover;
+    transition: 1s opacity;
+    
+
 }
 
-#navbar .logo{
-    font-size: 1.5em;
-    font-weight: bold;
-}
-#navbar a{
-    color:white;
-}
+#container{
 
-
-
-#navbar .nav-links ul{
+    width: 100%;
+    height: 1780px;
     display: flex;
-}
+    justify-content: center;
 
-#navbar .nav-links ul li{
-    margin: 0 30px;
-
-}
-
-#navbar .nav-links ul li.active a{
-    color:aqua;
-    font-weight: 600;
     
 }
 
-*/ 
-
-.background-slideshow{
-position:static;
-
-
+.arrow{
+    border: solid #fff;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 10px;
+    transition: transform 0.3s ease-out;
+    outline: none;
 }
 
-.image1 {
-    background-image: url(/assets/img/n.jpg);
+#right-btn{
+    margin: auto 0 auto -2em;
+}
+
+#right-btn .arrow{
+    transform: rotate(-45deg);
+}
+
+#left-btn {
+    z-index: 0;
+    margin: auto -2em auto 0;
+}
+
+#left-btn .arrow{
+    transform: rotate(135deg);
 }
 
 
-.image2 {
-    background-image: url(/assets/img/0068.png);
-}
 
 
 
-.slideshow{
-    z-index: auto;
-}
 
 
 
-.button_slide{
-    align-items: center;
-    width: 100%;
-    height: 10vh;
-    background: no-repeat;
 
-}
 
 

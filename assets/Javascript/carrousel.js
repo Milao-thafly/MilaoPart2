@@ -1,34 +1,31 @@
-class Diaporama {
-    constructor(idContainer) {
-        this.container = document.getElementById(idContainer);
-        this.btnPrevious = this.container.querySelector(".previous");
-        this.btnNext = this.container.querySelector(".next");
-        this.image = this.container.querySelectorAll("figure");
-        this.index = 0;
-        this.affichage();
-        this.btnNext.addEventListener("click", () => { this.next() })
-        this.btnPrevious.addEventListener("click", () => {this.btnPrevious() })
-    }
+const img = document.getElementById('container');
+const rightBtn = document.getElementById('right-btn');
+const leftBtn = document.getElementById('left-btn');
 
-    next() {
-        console.log(this);
-        this.index++;
-        if (this.index >= this.images.length) this.index =0;
-        this.affichage();
-    }
+let pictures =['/img/n.jpg','/img/Forest.png','/img/hostel.png'];
 
-    previous() {
-        this.index--;
-        if (this.index < 0) this.index = this.images.length -1;
-        this.affichage();
-    }
+img.src = pictures[0];
+let position = 0;
 
-    affichage() {
-        for (const image of this.images) {
-            images.style.display ="none";
-        }
-        this.images[this.index].style.display = "block";
+const moveRight = () => {
+    if (position >= pictures.length - 1) {
+        position = 0 
+        img.src = pictures[position + 1];
+        return;
     }
+    img.src = pictures[position + 1];
+    position++;
 }
 
-const diaporama = new Diaporama("container");
+
+const moveLeft = () => {
+    if (position < 1) {
+        position = 0 
+        img.src = pictures[position - 1];
+        return;
+    }
+    img.src = pictures[position - 1];
+    position--;
+}
+rightBtn.addEventListener("click", moveRight);
+leftBtn.addEventListener("click", moveLeft);
