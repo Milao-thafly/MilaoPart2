@@ -1,29 +1,28 @@
-*,
+/* *,
 ::before,
 ::after{
  box-sizing: border-box;
     margin:0;
     padding: 0;
-}
+} */
 body{
     
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    width: 1760px;
-    height: 5800px;
+    width: 1920px;
+    height: 1080px;
     background-color: black;
 
 
 }
 
-header{
-    height: 150px;
-}
-main{
-    height: 1320px;
-}
-nav {
+
+/* main{
+    width: 1920px;
+    height: 1080px;
+} */
+/* nav {
     position: sticky;
-    width: 1850px;
+    width: 1920px;
     display: flex;
     align-items: center;
     padding: 15px 25px;
@@ -82,7 +81,7 @@ nav {
 
 .nav-authentication{
     margin-left: auto;
-}
+} */
 
 
 img{
@@ -99,6 +98,8 @@ label{
  padding-right: 500px;
 }
 .ContactArea{
+    
+    padding: 45px;
     display: flex;
     justify-content: center;
 }
@@ -106,6 +107,7 @@ label{
 .contactArea{
     
     position: absolute;
+    padding: 10px;
 
     width: 400px;
     height: 400px;

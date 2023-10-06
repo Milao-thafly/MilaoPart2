@@ -1,10 +1,10 @@
-*,
+/* *,
 ::before,
 ::after{
  box-sizing: border-box;
     margin:0;
     padding: 0;
-}
+} */
 
 @media screen and (min-width: 1024px ) {
 
@@ -15,25 +15,25 @@
     body{
         
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        /* background: #312a2a; */
-        height: 1320px;
+        height: 1080px;
         background-color: black;
 
 
     }
-    main{
-        height: 1320px;
-    }
-    nav {
+    /* main{
+        width: 1920px;
+        height: 1080px;
+    } */
+    /* nav {
         position: fixed;
-        width: 1850px;
+        width: 1920px;
         display: flex;
         align-items: center;
-        padding: 15px 25px;
+        padding: 5px 5px;
         background: #131212d3;
         box-shadow: inset 0px -1px 0px #c5c5c600;
-    }
-    .logo{
+    } */
+    /* .logo{
         display: flex;
         align-items: center;
         text-decoration: none;
@@ -85,7 +85,7 @@
 
     .nav-authentication{
         margin-left: auto;
-    }
+    } */
 
 
     img{
@@ -96,7 +96,7 @@
     h1{
         border-top: 2px solid rgba(255, 255, 255, 0.568);
         border-left: 1px solid rgba(255, 255, 255, 0.568);
-        padding: 5px;
+        padding: 2px;
         display: flex;
         justify-content: center;
         color: white;
@@ -172,73 +172,64 @@
     #trippyForm1{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-left: 50px;
-        padding: 5px;
+        padding: 2px;
         width: 10px;
     }
     #trippyForm2{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-right: 76px;
-        padding: 5px;
+        padding: 2px;
         width: 10px;
     }
     #trippyForm3{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-left: 30px;
-        padding: 5px;
+        padding: 2px;
         width: 10px;
     }
     #trippyForm4{
         border: 1px solid rgba(255, 255, 255, 0.568);
-        margin-left: 50px;
-        padding: 5px;
-        width: 10px;
+        margin-left: 90px;
+        width: 18px;
     }
     #trippyForm5{
         border: 1px solid rgba(255, 255, 255, 0.568);
-        margin-right: 150px;
-        padding: 5px;
+        margin-right: 250px;
         width: 10px;
     }
     #trippyForm6{
         border: 1px solid rgba(255, 255, 255, 0.568);
-        margin-left: 200px;
-        padding: 5px;
+        margin-left: 400px;
         width: 10px;
     }
     #trippyForm7{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-left: 800px;
-        padding: 5px;
         width: 10px;
     }
     #trippyForm8{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-right: 786px;
-        padding: 5px;
         width: 10px;
     }
     #trippyForm9{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-right: 90px;
-        padding: 5px;
         width: 10px;
     }
     #trippyForm10{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-left: 50px;
-        padding: 5px;
         width: 10px;
     }
     #trippyForm11{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-right: 786px;
-        padding: 5px;
         width: 10px;
     }
     #trippyForm12{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-right: 985px;
-        padding: 5px;
         width: 10px;
     }
     #trippyForm13{
@@ -529,7 +520,7 @@ h2{
     width: 1700px;
     border-top: 2px solid rgba(255, 255, 255, 0.568);
     border-left: 1px solid rgba(255, 255, 255, 0.568);
-    padding: 5px; 
+    padding: 2px; 
     margin-left: 180px;
     align-items: center;
 }
@@ -538,8 +529,8 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 100px;
-    width: 1500px;
+    margin: 300px;
+    width: 1000px;
     margin-top: 50px;
     gap: 30px;
 }
@@ -549,8 +540,8 @@ h2{
     display: flex;
     border-top: 2px solid rgba(255, 255, 255, 0.568);
     border-left: 1px solid rgba(255, 255, 255, 0.568);
-    padding: 35px;
-    width: 100%;
+    padding: 20px;
+    width: 150%;
     
 }
 input{
@@ -600,54 +591,50 @@ button{
 
 #trippyForm1{
     border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 350px;
-    padding: 5px;
-    height: 40px;
-    width: 40px;
+    margin-right: 1150px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 }
 #trippyForm2{
     border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 760px;
-    padding: 5px;
-    height: 40px;
-    width: 40px;
+    margin-right: 150px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
 #trippyForm3{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 1400px;
-    padding: 5px;
-    height: 40px;
-    width: 40px;
-    box-shadow: 0 0 30px white;
+    height: 30px;
+    width: 30px;
+    box-shadow: 0 0 15px white;
 
 }
 #trippyForm4{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 50px;
-    padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
 #trippyForm5{
     border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 150px;
-    padding: 5px;
-    height: 40px;
-    width: 40px;
+    margin-right: 900px;
+    padding: 1px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
 #trippyForm6{
     border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 200px;
+    margin-left: 1500px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -655,8 +642,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 800px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -664,8 +651,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-right: 786px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -673,8 +660,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-right: 90px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -682,8 +669,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 50px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -691,8 +678,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-right: 786px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -700,8 +687,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-right: 985px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -709,8 +696,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 554px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -718,8 +705,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 1852px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -727,8 +714,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 956px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -736,8 +723,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-right: 1250px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -745,8 +732,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 200px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -754,8 +741,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-right: 150px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -763,8 +750,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 50px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -772,8 +759,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-right: 457px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -781,8 +768,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-right: 863px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -790,8 +777,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 1635px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -799,8 +786,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-right: 1010px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -808,8 +795,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-right: 874px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -817,8 +804,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 1900px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -826,8 +813,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-right: 1350px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -835,8 +822,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-right: 258px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -844,8 +831,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 659px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -853,8 +840,8 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-right: 247px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
@@ -862,89 +849,80 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-right: 777px;
     padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
 #trippyForm31{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 893px;
-    padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
 #trippyForm32{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 920px;
-    padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
 #trippyForm33{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 122px;
-    padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
 #trippyForm34{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-right: 1356px;
-    padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
 #trippyForm35{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 1489px;
-    padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
 #trippyForm36{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-right: 1111px;
-    padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
 #trippyForm37{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 1689px;
-    padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
 #trippyForm38{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-right: 420px;
-    padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }
 #trippyForm39{
     border: 1px solid rgba(255, 255, 255, 0.568);
     margin-left: 1312px;
-    padding: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     box-shadow: 0 0 30px white;
 
 }

@@ -1,32 +1,23 @@
-*,
+/* *,
 ::before,
 ::after{
  box-sizing: border-box;
     margin:0;
     padding: 0;
-}
+} */
 @font-face {
     font-family: 'Empiric Roman';
     src: url(/assets/Font/empiric_roman/EMPORO.TTF);
 }
-body{
-    
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: rgb(0, 0, 0);
-    height: 1320px;
 
 
-}
 
-header{
-    height: 150px;
-}
-main{
-    height: 1320px;
-}
+/* main{
+    width: 1920px;
+    height: 1080px;
+} */
 nav {
-    position: sticky;
-    width: 1850px;
+    width: 1820px;
     display: flex;
     align-items: center;
     padding: 15px 25px;

@@ -28,6 +28,7 @@ Encore
     .addStyleEntry('contact', './assets/styles/contact.css')
     .addStyleEntry('merch', './assets/styles/merch.css')
     .addStyleEntry('help', './assets/styles/help.css')
+    .addStyleEntry('styleapp', './assets/styles/app.css')
 
 
 

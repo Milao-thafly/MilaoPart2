@@ -1,13 +1,12 @@
 {% extends 'base.html.twig' %}
 
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-
-
-        {% block javascripts %}
-			{{ encore_entry_script_tags('carrousel') }}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+			{% block current_css %}{% endblock %}
 		{% endblock %}
+
+
+        
 
 {% block title %} Milao {% endblock %}
 
@@ -17,22 +16,25 @@
 <main>
 
 
-    <ul id="container">
-<button id="left-btn"><i class="arrow"></i></button>
-        <li>
-            <img class="carrouselImg" src="{{ asset('/img/n.jpg') }}" alt="Milao!"/>
-        </li>
+    <div id="container">
+        <button id="left-btn"><i class="arrow"></i></button>
 
-        <li>
-            <img class="carrouselImg" src="{{ asset('/img/Forest.png') }}" alt="Animal!"/>
-        </li>
 
-        <li>
-            <img class="carrouselImg" src="{{ asset('/img/hostel.png') }}" alt="pray"/>
-        </li>
-<button id="right-btn"><i class="arrow"></i></button>
+            <figure>
+                <img class="carrousel" src="{{ asset('/img/n.jpg') }}" alt="Animal!"/>
+            
+            </figure>   
+            <figure>     
+                <img class="carrousel" src="{{ asset('/img/Forest.png') }}" alt="Animal!"/>
+            </figure> 
 
-</ul>
+            <figure>    
+                <img class="carrousel" src="{{ asset('/img/hostel.png') }}" alt="pray"/>
+            </figure> 
+
+        <button id="right-btn"><i class="arrow"></i></button>
+
+    </div>
 
 
 </main>
@@ -42,5 +44,8 @@
 
 {% endblock %}
 
+{% block javascripts %}
+			{{ encore_entry_script_tags('carrousel') }}
+{% endblock %}
 
 
