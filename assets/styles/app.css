@@ -13,6 +13,7 @@ body{
     
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgb(0, 0, 0);
+    max-width: 1850px;
     height: 1080px;
 
 
@@ -22,17 +23,17 @@ header{
     height: 70px;
 }
 main{
-    width: 1850px;
-    height: 1000px;
+    width: 100%;
+    height: 1rem;
 
 }
-nav {
-    width: 1850px;
+/* nav {
+    max-width: 1920px;
     display: flex;
     align-items: center;
-    background: #131212d3;
-    box-shadow: inset 0px -1px 0px #c5c5c600;
-}
+    background: #13121213;
+    box-shadow: inset 0px -1px 0px #4a7a6600;
+} */
 .logo{
     display: flex;
     align-items: center;
@@ -95,7 +96,7 @@ nav {
 #button-login{
     position:absolute;
     right: 7rem;
-    bottom: 17px;
+    top: 1px;
     background: none;
     text-transform: uppercase;
     text-shadow:0 0 25px rgb(74, 190, 119);
@@ -112,12 +113,14 @@ nav {
 
 #loginIcon{
     width: 20px;
+    display: flex;
+    float: right;
 
 }
 #button-register{
         position:absolute;
         right: 2rem;
-        bottom: 16px;
+        top: 1px;
         background: none;
         text-transform: uppercase;
         text-shadow:0 0 25px rgb(74, 190, 119);
@@ -152,10 +155,10 @@ nav {
 
 
 #container{
-    background-size: cover;
-    transition: 2s opacity;
     display: flex;
     justify-content: center;
+    transition: 2s;
+    width: 100%;
     
 
     
@@ -163,21 +166,21 @@ nav {
 
 .arrow{
     border: solid #fff;
-    border-width: 0 3px 3px 0;
+    border-width: 0 2px 2px 0;
     display: inline-block;
-    padding: 7px;
+    padding: 6px;
     transition: transform 0.3s ease-out;
 }
 
 #right-btn{
-    height: 50px;
+    height: 45px;
     border: none;
     outline: none;
     background: rgba(0, 0, 0, 0.233);
     cursor: pointer;
-    padding: 1.0em;
-    display: flex;
-    margin: auto 0 auto -2em;
+    padding: 0.9em;
+    display: block;
+    margin: auto 0 auto -4em;
 }
 
 #right-btn .arrow{
@@ -185,15 +188,15 @@ nav {
 }
 
 #left-btn {
-    height: 50px;
+    height: 45px;
     border: none;
     outline: none;
     background: rgba(0, 0, 0, 0.233);
     cursor: pointer;
-    padding: 1.0em;
+    padding: 0.9em;
     display: flex;
     z-index: 0;
-    margin: auto -2em auto 0;
+    margin: auto -4em auto 0;
 }
 
 #left-btn .arrow{
@@ -201,7 +204,7 @@ nav {
 }
 
 #container img{
-    width: 103%;
+    width: 100%;
     z-index: -2;
 }
 

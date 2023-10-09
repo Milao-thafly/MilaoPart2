@@ -14,11 +14,31 @@ class UserController extends AbstractController
     {
 
         return $this->render('user/user.html.twig', [
-            'controller_name' => 'UserController',
+            'users' => $userRepository->findAll(),
         ]);
     }
 
-    #[Route('/{id}/edit', name:'app_user_edit', methods: ['GET', 'POST'])]
+    #[Route('/new/user', name: 'app_user_new', methods: ['GET', 'POST'])]
+    public function newUser(Request $request, UserRepository $userRepository): Response
+    {
+        $user = new User();
+        $form = this->createForm(UserType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $userRepository->save($user, true);
+
+            return $this->redirectToRoute('app_user', [], Response::HTTP_SEE_OTHER );
+
+        }
+
+        return $this->renderForm('user/new.html.twig', [
+            'user' => $user,
+            'form' => $form,
+        ]);
+    }
+
+    #[Route('user/{id}/edit', name:'app_user_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, User $user, UserRepository $userRepository): Response
     {
         $form = $this->createForm(UserType::class, $user);

@@ -1,10 +1,4 @@
-/* *,
-::before,
-::after{
- box-sizing: border-box;
-    margin:0;
-    padding: 0;
-} */
+
 @font-face {
     font-family: 'Empiric Roman';
     src: url(/assets/Font/empiric_roman/EMPORO.TTF);
@@ -12,12 +6,9 @@
 
 
 
-/* main{
-    width: 1920px;
-    height: 1080px;
-} */
+
 nav {
-    width: 1820px;
+    width: 100%;
     display: flex;
     align-items: center;
     padding: 15px 25px;
@@ -83,51 +74,7 @@ nav {
     margin-left: auto;
 }
 
-#button-login{
-    position:absolute;
-    right: 7rem;
-    bottom: 17px;
-    background: none;
-    text-transform: uppercase;
-    text-shadow:0 0 25px rgb(74, 190, 119);
-    color: rgb(133, 209, 186);
-    letter-spacing: 2px;
-    transition: .5s;
-    overflow: hidden;
 
-}
-#button-register{
-        position:absolute;
-        right: 2rem;
-        bottom: 17px;
-        background: none;
-        text-transform: uppercase;
-        text-shadow:0 0 25px rgb(74, 190, 119);
-        color: rgb(133, 209, 186);
-        letter-spacing: 2px;
-        transition: .5s;
-        overflow: hidden;
-}
-
-#button-login:hover{
-    background-color: rgba(80, 129, 109, 0.493) ;
-    color: #333;
-    box-shadow: 0 0 5px rgba(80, 161, 129, 0.335),
-                0 0 25px rgba(80, 161, 128, 0.493),
-                0 0 50px rgba(80, 161, 128, 0.493),
-                0 0 200px rgba(80, 161, 128, 0.493);
-    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
-}
-
-#button-register:hover{
-    background-color: rgba(80, 129, 109, 0.493) ;
-    color: #333;
-    box-shadow: 0 0 5px rgba(80, 161, 129, 0.335),
-                0 0 25px rgba(80, 161, 128, 0.493),
-                0 0 50px rgba(80, 161, 128, 0.493),
-                0 0 200px rgba(80, 161, 128, 0.493);
-                -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
-}
 
 img{
     width: 20px;
