@@ -10,5 +10,23 @@
 {% block title %} User {% endblock %}
 
 {% block body %}
+	<h1> Users </h1>
 
+	<table class="Profile">
+		<thead>
+			<tr>
+				<th>username :</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for user in users %}
+
+				<tr>
+				<td>
+				<a href="{{path ('app_profile', {id: user.username})}}">{{ user.username }}</a>
+				</td>
+				</tr>
+				{% endfor %}
+		</tbody>
+	</table>
 {% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfileController!{% endblock %}
+
+{% block body %}
+	<table class="Profile">
+
+		<tbody>
+        {% for user in users %}
+					<tr>
+                    <th>Id</th>
+					<td>{{ user.id }}</td>
+                    </tr>
+                    
+                    <tr>
+                    <th>Email</th>
+					<td>{{ user.email }}</td>
+                    </tr>
+
+                    <tr>
+                    <th>Roles</th>
+					<td>{{ user.roles ? user.roles|json_encode : ''}}</td>
+                    </tr>
+
+                    <tr>
+                    <th>Password</th>
+					<td>{{ user.password }}</td>
+                    </tr>
+
+                    <tr>
+                    <th>username</th>
+					<td>{{ user.username }}</td>
+                    </tr>
+
+                    <tr>
+                    <th>Created_at</th>
+					<td>{{ user.createdAt ? user.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                    </tr>
+				{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

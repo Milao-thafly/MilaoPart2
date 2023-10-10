@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use LogicException;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,7 +12,7 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class SecurityController extends AbstractController
 {
-    #[Route('/security', name: 'app_security', methods: ['GET' , 'POST'])]
+    #[Route('/security', name: 'app_security')]
     public function index(AuthenticationUtils $authenticationUtils): Response
     {
 
@@ -27,5 +28,12 @@ class SecurityController extends AbstractController
             'last_username' => $lastUsername,
             'error' => $error,
         ]);
+    }
+
+    
+    #[Route(path: '/logout', name: 'user_logout')]
+    public function logout(): void
+    {
+        throw new LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 }

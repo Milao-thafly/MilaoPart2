@@ -45,6 +45,13 @@ class RegistrationFormType extends AbstractType
                 'label' => 'email',
                 'required' => true,
             ])
+            ->add('imageFile', VichImageType::class, [
+                'required' => false,
+                'download_uri' => false,
+                'image_uri' => true, 
+                'asset_helper' => true,
+                'label' => 'Image',
+            ])
             ->add('telephone', IntegerType::class, [
                 'label' => 'Telephone',
                 'required' => true,

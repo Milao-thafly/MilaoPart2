@@ -16,15 +16,21 @@
 
 <main
 
-
-{% for product in products %}
-    <div class="merch">
-        <a href="{{path ('home_editProduct', {id: product.id}) }}">{{ product.name }}</a>
-        <p>{{ product.name }}</p>
+<div class="product">
+    {% for product in products %}
+    <div class="shadow">
+    <a href="productsell"
+        <div class="merch">
+            <a id="productName" href="{{path ('home_editProduct', {id: product.id}) }}">
+            <p>{{ product.name }}</p>
+            <div class="productImg"><img src="{{ vich_uploader_asset(product,'imageFile') }}"></div>
+            </a>
+    </a>        
+        </div>
     </div>
-    
-{% endfor %}
-
+        
+    {% endfor %}
+</div>
 			<a href="{{ path('home_createProduct') }}">
 				<button type="button" id="button-create">Create</button>
 			</a>

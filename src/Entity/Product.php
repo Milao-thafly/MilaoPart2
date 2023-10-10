@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use App\Entity\Product;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation\Slug;
 use App\Repository\ProductRepository;
@@ -80,11 +79,11 @@ class Product
     {
         $this->imageFile = $imageFile;
 
-        // if (null !== $imageFile) {
+        if (null !== $imageFile) {
 
-        //     $this->modified_at = new \DateTimeImmutable();
+            $this->modified_at = new \DateTimeImmutable();
 
-        // }
+        }
     }
 
     public function getImageFile(): ?File
@@ -222,7 +221,7 @@ class Product
         return $this->deleted_at;
     }
 
-    public function setDeletedAt(\DateTimeImmutable $deleted_at): static
+    public function setDeletedAt(\DateTimeImmutable $deleted_at): self
     {
         $this->deleted_at = $deleted_at;
 
@@ -277,7 +276,7 @@ class Product
     {
         if (!$this->products->contains($product)) {
             $this->products->add($product);
-            $product->setUser($this);
+            $product->setUser_Id($this);
         }
 
         return $this;
@@ -287,8 +286,8 @@ class Product
     {
         if ($this->products->removeElement($product)) {
             // set the owning side to null (unless already changed)
-            if ($product->getUser() === $this) {
-                $product->setUser(null);
+            if ($product->getUser_Id() === $this) {
+                $product->setUser_Id(null);
             }
         }
 
