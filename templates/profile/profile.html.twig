@@ -38,5 +38,11 @@
                     </tr>
 				{% endfor %}
 		</tbody>
+
 	</table>
+            <form method="POST" action="{{ path('app_user_delete', {'id': users.id}) }}"
+    onsubmit="return confirm('Êtes-vous sùr de vouloir supprimer cet utilisateur intitulé: ')">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ users.id) }}">
+    <button class="btnDelete"> Supprimer </button>
+</form>
 {% endblock %}

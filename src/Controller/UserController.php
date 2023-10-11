@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use Doctrine\ORM\Mapping\Id;
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -61,7 +62,7 @@ class UserController extends AbstractController
     } 
 
     #[Route('/{id}', name: 'app_user_delete', methods: ['POST'])]
-    public function delete(Request $request, User $user,UserRepository $userRepository): Response
+    public function delete(Request $request, User $user,UserRepository $userRepository, Id $id): Response
     {
         if($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('token'))) {
             $userRepository->remove($user, true);

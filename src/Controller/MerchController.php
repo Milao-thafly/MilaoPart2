@@ -107,9 +107,9 @@ class MerchController extends AbstractController
         return $this->redirectToRoute('app_merch');
     }
     #[Route('/merch/read/{id}', name: 'merch_readProduct', methods: 'GET|POST')]
-    public function show(ProductRepository $repoProduct, int $id): Response
+    public function show(ProductRepository $repoProduct, Product $product,int $id): Response
     {
-        $product = $repoProduct->find($product);
+        $products = $repoProduct->find($product);
         return $this->render('merch/merchRead.html.twig', [
             'product' => $product,
         ]);
