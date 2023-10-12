@@ -55,8 +55,6 @@ class Product
     #[Gedmo\Timestampable(on: 'update')]
     private ?\DateTimeImmutable $modified_at = null;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $deleted_at = null;
 
 
 
@@ -216,17 +214,6 @@ class Product
         return $this;
     }
 
-    public function getDeletedAt(): ?\DateTimeImmutable
-    {
-        return $this->deleted_at;
-    }
-
-    public function setDeletedAt(\DateTimeImmutable $deleted_at): self
-    {
-        $this->deleted_at = $deleted_at;
-
-        return $this;
-    }
 
     public function getUser_Id(): ?User
     {

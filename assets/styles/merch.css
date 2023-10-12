@@ -1,29 +1,30 @@
 
 .product{
-
+    padding-top: 15vh;
 }
+
 .shadow{
     display: grid;
+    justify-content: space-evenly;
     grid-template-columns: repeat(4, 1fr);
     height: 500px;
     width: 25%;
     align-items: center;
-
-    box-shadow: 10px 15px rgba(112, 71, 71, 0.336);
-    border-radius: 50px;
-    background: linear-gradient(#2d555279,rgba(255, 102, 255, 0.199));
-
-
-
-
+    box-shadow: 10px 15px rgba(112, 71, 71, 0.13);
+    border-radius: 40px;
+    background: linear-gradient(#2d555286,rgba(255, 102, 255, 0.13));
 }
+
 .merch{
     display: block;
-    justify-content: space-evenly;
-    height: 500px;
-    
-    
-    
+    height: 500px;  
+}
+
+#productimg{
+width: 100%;
+height: 35vh;
+margin-bottom: 50px;
+margin-left: 1vh;
 }
 
 #productName{
@@ -35,8 +36,8 @@ margin-bottom: 20rem;
 #button-create{
     width: 100px;
     position:fixed;
-    right: 5rem;
-    bottom: 40px;
+    right: 3rem;
+    bottom: 400px;
     background: none;
     text-transform: uppercase;
     text-shadow:0 0 25px rgb(74, 190, 119);
@@ -44,7 +45,6 @@ margin-bottom: 20rem;
     letter-spacing: 2px;
     transition: .5s;
     overflow: hidden;
-
 }
 
 #button-create:hover{

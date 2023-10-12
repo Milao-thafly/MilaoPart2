@@ -14,7 +14,7 @@
 </div>
 {% endfor %}
 
-<main>
+
 
 <div class="product">
     <div class="shadow">
@@ -22,6 +22,7 @@
         <div class="merch">
             <p>{{ product.name }}</p>
             <p>{{ product.price }}</p>
+            <div class="productImg"><img id="productimg" src="{{ vich_uploader_asset(product,'imageFile') }}"></div>
             {# <p>{{ product.inventory_id }}</p> #}
             {# <p>{{ product.size }}</p> #}
 
@@ -32,5 +33,5 @@
         
 </div>
 
-</main>
+
 {% endblock %}

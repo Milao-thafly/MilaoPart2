@@ -3,17 +3,16 @@
 {% block title %}Create merch{% endblock %}
 
 {% block current_css %}
-    {# <link rel="stylesheet" href="{{ asset('asset/style/merch.css') }}"> #}
           {{ encore_entry_link_tags('merchCreate') }}
 {% endblock %}
 
 {% block body %}
 
-<main>
+
 {{ form_start(form) }}
 
 {{ form_end(form) }}
 {# <a href="{{path('app_merch') }}" class="createArticleButton">Créer un article.</a> #}
 
-</main>
+
 {% endblock %}

@@ -80,64 +80,73 @@
     #trippyForm1{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-left: 50px;
-        padding: 1px;
+        padding: 5px;
         width: 7px;
     }
     #trippyForm2{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-right: 76px;
-        padding: 2px;
+        padding: 5px;
         width: 10px;
     }
     #trippyForm3{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-left: 30px;
-        padding: 2px;
+        padding: 5px;
         width: 10px;
     }
     #trippyForm4{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-left: 90px;
-        width: 18px;
+        padding: 5px;
+        width: 10px;
     }
     #trippyForm5{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-right: 250px;
+        padding: 5px;
         width: 10px;
     }
     #trippyForm6{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-left: 400px;
+        padding: 5px;
         width: 10px;
     }
     #trippyForm7{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-left: 800px;
+        padding: 5px;
         width: 10px;
     }
     #trippyForm8{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-right: 786px;
+        padding: 5px;
         width: 10px;
     }
     #trippyForm9{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-right: 90px;
+        padding: 5px;
         width: 10px;
     }
     #trippyForm10{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-left: 50px;
+        padding: 5px;
         width: 10px;
     }
     #trippyForm11{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-right: 786px;
+        padding: 5px;
         width: 10px;
     }
     #trippyForm12{
         border: 1px solid rgba(255, 255, 255, 0.568);
         margin-right: 985px;
+        padding: 5px;
         width: 10px;
     }
     #trippyForm13{
@@ -306,438 +315,438 @@
 
 
 
+@media screen and (max-width: 1024px ){
+    #h1Date{
+        width: 10vh;
+        border-top: 2px solid rgba(255, 255, 255, 0.568);
+        border-left: 1px solid rgba(255, 255, 255, 0.568);
+    }
+    h1{
 
-#h1Date{
-    width: 1700px;
-    border-top: 2px solid rgba(255, 255, 255, 0.568);
-    border-left: 1px solid rgba(255, 255, 255, 0.568);
-}
-h1{
+        
+        display: flex;
+        flex-direction: row; 
+        justify-content: center;
+        width: 60%;
+        padding-top: 40px;
+        padding-left: 25vh;
+        color: white;
+        margin-bottom: 80px;
+        font-family:'Empiric Roman';
 
-    
-    display: flex;
-    flex-direction: row; 
-    justify-content: center;
-    width: 1100px;
-    padding-top: 40px;
-    padding-left: 600px;
-    color: white;
-    margin-bottom: 80px;
-    font-family:'Empiric Roman';
+    }
 
-}
-
-h2{
-    width: 1700px;
-    border-top: 2px solid rgba(255, 255, 255, 0.568);
-    border-left: 1px solid rgba(255, 255, 255, 0.568);
-    padding: 2px; 
-    margin-left: 180px;
-    align-items: center;
-}
-.container_list{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 300px;
-    width: 1000px;
-    margin-top: 50px;
-    gap: 30px;
-}
-
-
-.ticket{
-    display: flex;
-    border-top: 3px solid rgba(255, 255, 255, 0.568);
-    border-left: 2px solid rgba(255, 255, 255, 0.568);
-    padding: 25px;
-    width: 160%;
-    
-}
-input{
-    display: flex;
-    width: 900px;
-    height: 90px;
-}
-
-.ticketNumber{
-    /* border-top: 2px solid rgba(255, 255, 255, 0.568); */
-    left: 20px;
-    padding-left: 200px;
-    width: 15px;
-    font-size: 35px;
-    color: rgb(156, 153, 153);
-}
-
-.btn_increase{
-    background: none;
-    outline: none;
-    color: white;
-    border: 1px solid white;
-    display: block;
-    padding: 45px;
-    margin-left: 250px;
-    height: 40px;
-    width: 70px;
-    font-size: 40px;
+    h2{
+        width: 60%;
+        border-top: 2px solid rgba(255, 255, 255, 0.568);
+        border-left: 1px solid rgba(255, 255, 255, 0.568);
+        padding: 2px; 
+        align-items: center;
+    }
+    .container_list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 8rem;
+        width: 70%;
+        margin-top: 50px;
+        gap: 1em;
+    }
 
 
-}
-.btn_decrease{
-    background: none;
-    outline: none;
-    color: white;
-    border: 1px solid white;
-    display: block;
-    padding: 45px;
-    margin-left: 150px;
-    height: 40px;
-    width: 70px;
-    font-size: 40px;
-    
+    .ticket{
+        display: flex;
+        border-top: 3px solid rgba(255, 255, 255, 0.568);
+        border-left: 2px solid rgba(255, 255, 255, 0.568);
+        padding: 2em;
+        width: 160%;
+        
+    }
+    input{
+        display: flex;
+        width: 20rem;
+        height: 90px;
+    }
 
-}
+    .ticketNumber{
+        /* border-top: 2px solid rgba(255, 255, 255, 0.568); */
+        left: 20px;
+        padding-left: 2vh;
+        width: 10px;
+        font-size: 35px;
+        color: rgb(156, 153, 153);
+    }
 
-button{
-    border: 1px solid rgba(255, 255, 255, 0.568);
+    .btn_increase{
+        background: none;
+        outline: none;
+        color: white;
+        border: 1px solid white;
+        display: block;
+        padding: 45px;
+        margin-left: 10rem;
+        height: 40px;
+        width: 70px;
+        font-size: 40px;
 
-}
 
-#trippyForm1{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 1450px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
-}
-#trippyForm2{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 150px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    .btn_decrease{
+        background: none;
+        outline: none;
+        color: white;
+        border: 1px solid white;
+        display: block;
+        padding: 45px;
+        margin-left: 5rem;
+        height: 40px;
+        width: 70px;
+        font-size: 40px;
+        
 
-}
-#trippyForm3{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 1670px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 15px white;
+    }
 
-}
-#trippyForm4{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 50px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    button{
+        border: 1px solid rgba(255, 255, 255, 0.568);
 
-}
-#trippyForm5{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 1400px;
-    padding: 1px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
 
-}
-#trippyForm6{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 1600px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    #trippyForm1{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 25rem;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
+    }
+    #trippyForm2{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 1rem;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm7{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 1000px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm3{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 25rem;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 15px white;
 
-}
-#trippyForm8{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 1200px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm4{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 1rem;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm9{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 90px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm5{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 25rem;
+        padding: 1px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm10{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 1500px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm6{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 25rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm11{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 6px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm7{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 25rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm12{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 1285px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm8{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 25rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm13{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 1454px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm9{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 1rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm14{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 1852px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm10{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 25rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm15{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 2256px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm11{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 1rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm16{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 1250px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm12{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 25rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm17{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 1400px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm13{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 25rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm18{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 40px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm14{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 25rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm19{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 50px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm15{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 1rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm20{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 1857px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm16{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 25rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm21{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 1163px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm17{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 25rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm22{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 1635px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm18{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 1rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm23{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 1310px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm19{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 1rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm24{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 874px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm20{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 25rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm25{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 1900px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm21{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 25rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm26{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 1350px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm22{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 25rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm27{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 258px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm23{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 25rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm28{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 1659px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm24{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 1rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm29{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 447px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm25{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 25rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm30{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 1577px;
-    padding: 5px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm26{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 25rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm31{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 293px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm27{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 1rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm32{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 1320px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm28{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 25rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm33{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 1202px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm29{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 1rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm34{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 1356px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm30{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 25rem;
+        padding: 5px;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm35{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 1489px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm31{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 1rem;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm36{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 1201px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm32{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 25rem;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm37{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 1689px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm33{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 25rem;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm38{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-right: 1420px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm34{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 25rem;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
-}
-#trippyForm39{
-    border: 1px solid rgba(255, 255, 255, 0.568);
-    margin-left: 112px;
-    height: 25px;
-    width: 25px;
-    box-shadow: 0 0 30px white;
+    }
+    #trippyForm35{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 25rem;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
 
+    }
+    #trippyForm36{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 1rem;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
+
+    }
+    #trippyForm37{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 25rem;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
+
+    }
+    #trippyForm38{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-right: 25rem;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
+
+    }
+    #trippyForm39{
+        border: 1px solid rgba(255, 255, 255, 0.568);
+        margin-left: 1rem;
+        height: 25px;
+        width: 25px;
+        box-shadow: 0 0 30px white;
+
+    }
 }

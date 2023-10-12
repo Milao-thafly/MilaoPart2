@@ -14,7 +14,7 @@
 </div>
 {% endfor %}
 
-<main
+
 
 <div class="product">
     {% for product in products %}
@@ -23,7 +23,7 @@
         <div class="merch">
             <a id="productName" href="{{path ('merch_readProduct', {id: product.id}) }}">
             <p>{{ product.name }}</p>
-            <div class="productImg"><img src="{{ vich_uploader_asset(product,'imageFile') }}"></div>
+            <div class="productImg"><img id="productimg" src="{{ vich_uploader_asset(product,'imageFile') }}"></div>
             </a>
     </a>        
         </div>
@@ -34,5 +34,5 @@
 			<a href="{{ path('home_createProduct') }}">
 				<button type="button" id="button-create">Create</button>
 			</a>
-</main>
+
 {% endblock %}

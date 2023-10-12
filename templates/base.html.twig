@@ -1,7 +1,5 @@
-<!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
 
 
 		{% block stylesheets %}
@@ -68,12 +66,12 @@
 				</div>
 			</nav>
 		</header>
-		
+	<main>
 		{% block body %}{% endblock %}
+	</main>	
 		
-		{% block footer %}
 			{% include 'footer/footer.html.twig' %}
-		{% endblock %}
+		
 	</body>
 
 

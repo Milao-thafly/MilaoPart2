@@ -1,23 +1,42 @@
+@media screen and (min-width: 1024px ){
+    label{
+    padding-right: 500px;
+    }
+    .ContactAreaDiv{
+        
+        padding-top: 170px;
+        display: flex;
+        justify-content: center;
+    }
 
-label{
- padding-right: 500px;
+    .contactArea{
+        
+        position: absolute;
+        padding: 10px;
+
+        width: 400px;
+        height: 450px;
+        color: white;
+        
+        background-color: rgba(51, 51, 51, 0);
+        box-shadow: 0 0 30px white;
+    }
 }
-.ContactArea{
-    
-    padding: 45px;
-    display: flex;
-    justify-content: center;
-}
+@media screen and (max-width: 1024px ){
 
-.contactArea{
-    
-    position: absolute;
-    padding: 10px;
+    .ContactAreaDiv{
+        margin: 20vh;
+        display: flex;
+        justify-content: center;
+    }
 
-    width: 400px;
-    height: 400px;
-    color: white;
-    
-    background-color: rgba(51, 51, 51, 0);
-    box-shadow: 0 0 30px white;
+    .contactArea{
+        
+        position: absolute;
+        width: 80%;
+        height: 55vh;
+        color: white;
+        background-color: rgba(51, 51, 51, 0);
+        box-shadow: 0 0 30px white;
+    }
 }
