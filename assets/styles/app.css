@@ -6,7 +6,7 @@
     padding: 0;
 }
 
-@media screen and (min-width: 1024px ){
+@media screen and (min-width: 1320px ){
 @font-face {
     font-family: 'Empiric Roman';
     src: url(/assets/Font/empiric_roman/EMPORO.TTF);
@@ -262,7 +262,7 @@ ul li{
     margin-bottom: 20px;
 }
 }
-@media screen and (max-width: 1024px ){
+@media screen and (max-width: 1320px ){
     @font-face {
         font-family: 'Empiric Roman';
         src: url(/assets/Font/empiric_roman/EMPORO.TTF);
@@ -316,13 +316,14 @@ ul li{
         display: none;
     }
     .navlinks-container a {
-        margin: 0 10px;
-        font-size: 16px;
-        font-weight: 500;
-        text-decoration: none;
-        color: #686868;
-        display: inline-block;
-        position: relative;
+        position: fixed;
+        left: -100%;
+        top: 5%;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.25s;
+        
     }
 
     .linknav{
@@ -353,6 +354,15 @@ ul li{
         margin-left: auto;
     }
 
+    .hamburger{
+        display: block;
+    }
+    .hamburger:before{
+        content: \2630;
+        background-color: white;
+        width: 50px;
+    }
+
 
     #button-login{
         position:absolute;
@@ -378,8 +388,6 @@ ul li{
     #loginIcon{
         width: 20px;
         display: flex;
-        float: right;
-
     }
     #button-register{
             position:absolute;

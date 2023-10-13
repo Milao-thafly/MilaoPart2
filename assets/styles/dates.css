@@ -1,4 +1,4 @@
-@media screen and (min-width: 1024px ) {
+@media screen and (min-width: 1320px ) {
 
 
 
@@ -26,7 +26,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 300px;
+        margin: 200px;
         max-width: 1000px;
         margin-top: 10px;
         gap: 30px;
@@ -37,7 +37,7 @@
 
     .ticket{
         display: flex;
-        border-top: 2px solid rgba(255, 255, 255, 0.568);
+        border-top: 1px solid rgba(255, 255, 255, 0.568);
         border-left: 1px solid rgba(255, 255, 255, 0.568);
         padding: 5px;
         width: 100%;
@@ -56,16 +56,34 @@
         color: rgb(240, 240, 240);
     }
 
-    #btn_increase{
+    .btn_increase{
         background: none;
         outline: none;
-        border: 1px solid black;
+        color: white;
+        border: 1px solid white;
+        display: block;
+        padding: 25px;
+        margin-left: 30rem;
+        height: 40px;
+        width: 70px;
+        font-size: 30px;
+        border-radius: 20px;
+
 
     }
-    #btn_decrease{
+    .btn_decrease{
         background: none;
         outline: none;
-        border: 1px solid black;
+        color: white;
+        border: 1px solid white;
+        display: block;
+        padding: 25px;
+        margin-left: 10rem;
+        height: 35px;
+        width: 70px;
+        font-size: 30px;
+        border-radius: 20px;
+
     }
 
     button{
@@ -315,7 +333,7 @@
 
 
 
-@media screen and (max-width: 1024px ){
+@media screen and (max-width: 1320px ){
     #h1Date{
         width: 10vh;
         border-top: 2px solid rgba(255, 255, 255, 0.568);
@@ -327,9 +345,9 @@
         display: flex;
         flex-direction: row; 
         justify-content: center;
-        width: 60%;
+        width: 70%;
         padding-top: 40px;
-        padding-left: 25vh;
+        padding-left: 50vh;
         color: white;
         margin-bottom: 80px;
         font-family:'Empiric Roman';
@@ -337,19 +355,19 @@
     }
 
     h2{
-        width: 60%;
-        border-top: 2px solid rgba(255, 255, 255, 0.568);
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, 0.568);
         border-left: 1px solid rgba(255, 255, 255, 0.568);
-        padding: 2px; 
         align-items: center;
+        
     }
     .container_list{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 8rem;
-        width: 70%;
+        margin: 7rem;
+        width: 80%;
         margin-top: 50px;
         gap: 1em;
     }
@@ -357,16 +375,17 @@
 
     .ticket{
         display: flex;
-        border-top: 3px solid rgba(255, 255, 255, 0.568);
+        border-top: 2px solid rgba(255, 255, 255, 0.568);
         border-left: 2px solid rgba(255, 255, 255, 0.568);
-        padding: 2em;
-        width: 160%;
+        padding: 1em;
+        width: 100%;
+        border-radius: 1%;
         
     }
     input{
         display: flex;
-        width: 20rem;
-        height: 90px;
+        width: 30rem;
+        height: 100px;
     }
 
     .ticketNumber{
@@ -374,7 +393,7 @@
         left: 20px;
         padding-left: 2vh;
         width: 10px;
-        font-size: 35px;
+        font-size: 25px;
         color: rgb(156, 153, 153);
     }
 
@@ -384,11 +403,12 @@
         color: white;
         border: 1px solid white;
         display: block;
-        padding: 45px;
+        padding: 50px;
         margin-left: 10rem;
         height: 40px;
         width: 70px;
-        font-size: 40px;
+        font-size: 30px;
+        border-radius: 20px;
 
 
     }
@@ -398,12 +418,13 @@
         color: white;
         border: 1px solid white;
         display: block;
-        padding: 45px;
+        padding: 50px;
         margin-left: 5rem;
         height: 40px;
-        width: 70px;
-        font-size: 40px;
-        
+        width: 30px;
+        font-size: 30px;
+        border-radius: 20px;
+
 
     }
 
