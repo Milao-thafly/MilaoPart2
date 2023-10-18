@@ -3,7 +3,7 @@
 {% block title %}Hello MerchController!{% endblock %}
 
 {% block current_css %}
-    <link rel="stylesheet" href="{{ asset('public/build/merch.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/build/merchRead.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -16,18 +16,25 @@
 
 
 
-<div class="product">
-    <div class="shadow">
+<div class="productRead">
+    <div class="shadowRead">
 
-        <div class="merch">
-            <p>{{ product.name }}</p>
-            <p>{{ product.price }}</p>
+        <div class="merchRead">
             <div class="productImg"><img id="productimg" src="{{ vich_uploader_asset(product,'imageFile') }}"></div>
-            {# <p>{{ product.inventory_id }}</p> #}
-            {# <p>{{ product.size }}</p> #}
+            <p id="productNameRead">{{ product.name }}</p>
+            <p id="productPriceRead">{{ product.price }}</p>
+<select class="selectSize">
+    <option>XS</option>
+    <option>S</option>
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
+    <option>XXL</option>
+</select>
 
-            
-            
+<a id="productName" href="{{path ('app_payment') }}">Acheter</a>
+<p>Mettre dans le panier</p>
+
         </div>
     </div>
         

@@ -44,6 +44,7 @@
         
     }
     input{
+        min-width: 400px;
         margin-right: 800px;
         height: 60px;
     }

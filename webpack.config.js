@@ -29,6 +29,8 @@ Encore
     .addStyleEntry('merch', './assets/styles/merch.css')
     .addStyleEntry('help', './assets/styles/help.css')
     .addStyleEntry('styleapp', './assets/styles/app.css')
+    .addStyleEntry('merchRead', './assets/styles/merchRead.css')
+
 
 
 

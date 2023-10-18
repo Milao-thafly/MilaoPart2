@@ -15,15 +15,25 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class MerchController extends AbstractController
 {
+    /**
+     * Undocumented function
+     *
+     * @param ProductRepository $repoProduct will just find all the product in my repository
+     *     ProductRepository va juste aller chercher les produits dans le repository.
+
+     * @return Response
+     */
+
     #[Route('/merch', name: 'app_merch')]
     public function index(ProductRepository $repoProduct): Response
-    {
+    {   
+        //Here my var $product are equal to findAll the product in the ProductRepository
+        // Ici ma variable $product est équivalent à appeller tout mes produits dans le ProductRepository
         $products = $repoProduct->findAll();
-        //A faire vérifier que je récupère ce que je veux avec le var
 
 
         return $this->render('merch/merch.html.twig', [
-            // 'controller_name' => 'MerchController',
+
             'products' => $products,
         ]);
     }

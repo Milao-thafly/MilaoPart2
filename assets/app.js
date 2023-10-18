@@ -12,5 +12,7 @@ import './styles/contact.css';
 import './styles/merchCreate.css';
 import './styles/help.css';
 import './styles/merch.css';
+import './styles/merchRead.css';
+
 
 

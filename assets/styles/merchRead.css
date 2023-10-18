@@ -1,38 +1,38 @@
 
-.product{
+.productRead{
+    display: flex;
+    justify-content: center;
     padding-top: 15vh;
 }
 
-.shadow{
-    display: grid;
-    justify-content: space-evenly;
-    grid-template-columns: repeat(4, 1fr);
+.shadowRead{
+    display: flex;
+    justify-content: center;
     height: 500px;
-    width: 25%;
+    width: 50%;
     align-items: center;
     box-shadow: 10px 15px rgba(112, 71, 71, 0.13);
     border-radius: 40px;
-    background: linear-gradient(#2d555286,rgba(255, 102, 255, 0.13));
+    background: linear-gradient(#2d555286,rgba(255, 102, 255, 0.048));
 }
 
-.merch{
-    display: block;
+.merchRead{
+    display: flex;
+    justify-content:flex-end;    
     height: 500px;  
 }
 
-#productimg{
-width: 100%;
-height: 35vh;
-margin-bottom: 15vh;
-margin-left: 1vh;
+#productImg{
+margin-top: 5vh;
+padding-bottom: 5vh;
+margin-left: 15vh;
 }
 
-#productName{
-margin-bottom: 20rem;
+#productNameRead{
+margin-top: 25rem;
+
 }
-.productImg{
-    height: 200px;
-}
+
 #button-create{
     width: 100px;
     position:fixed;
@@ -58,8 +58,12 @@ margin-bottom: 20rem;
 }
 
 #productPriceRead{
-    display: flex;
-    
+    margin-top: 25rem;
+   
+}
+
+.selectSize{
+    padding-bottom: 15vh;
 }
 
 
