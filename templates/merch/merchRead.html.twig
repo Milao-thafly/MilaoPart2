@@ -20,9 +20,10 @@
     <div class="shadowRead">
 
         <div class="merchRead">
-            <div class="productImg"><img id="productimg" src="{{ vich_uploader_asset(product,'imageFile') }}"></div>
+            <div class="productImgRead"><img id="productimgRead" src="{{ vich_uploader_asset(product,'imageFile') }}"></div>
             <p id="productNameRead">{{ product.name }}</p>
             <p id="productPriceRead">{{ product.price }}</p>
+<div class="Panierbtn">
 <select class="selectSize">
     <option>XS</option>
     <option>S</option>
@@ -32,9 +33,10 @@
     <option>XXL</option>
 </select>
 
-<a id="productName" href="{{path ('app_payment') }}">Acheter</a>
-<p>Mettre dans le panier</p>
+<a class="buyButton" href="{{path ('app_payment') }}">Acheter</a>
+<a class="buyButton" href="{{path ('app_payment') }}">Mettre dans le panier</a>
 
+</div>
         </div>
     </div>
         

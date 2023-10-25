@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Controller;
-
-use App\Form\PaymentFormType;
-use App\Entity\PaymentDetails;
+use App\Entity\User;
+use App\Entity\UserPayment;
+use App\Form\UserPaymentType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,16 +14,16 @@ class PaymentController extends AbstractController
 {
     
     #[Route('/payment', name: 'app_payment')]
-    public function index(Request $request): Response
+    public function index(Request $request, EntityManagerInterface $em): Response
     {
-        $payment = new PaymentDetails();
+        $payment = new UserPayment();
 
-        $paymentForm = $this->createForm(PaymentFormType::class, $payment);
+        $paymentForm = $this->createForm(UserPaymentType::class, $payment);
         $paymentForm->handleRequest($request);
 
         if ($paymentForm->isSubmitted() && $paymentForm->isValid()) {
-            $UserId = $this -> getUser() -> getId();
-            $payment-> setUserId($UserId);
+            $userId = $this -> getUser() -> getId();
+            $payment-> setUserId($userId);
 
             $em->persist($payment);
             $em->flush();
@@ -31,7 +32,7 @@ class PaymentController extends AbstractController
             
         }
         return $this->render('payment/payment.html.twig', [
-            'form' => $paymentForm->createView()
+            'paymentForm' => $paymentForm->createView()
         ]);
     }
 }

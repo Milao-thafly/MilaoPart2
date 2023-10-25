@@ -14,6 +14,10 @@ class UserPayment
     #[ORM\Column]
     private ?int $id = null;
 
+    #[ORM\Column]
+    private ?string $card_name = null;
+
+
     #[ORM\Column(length: 255)]
     private ?string $payment_type = null;
 
@@ -90,6 +94,18 @@ class UserPayment
     public function setExpiry(\DateTimeInterface $expiry): static
     {
         $this->expiry = $expiry;
+
+        return $this;
+    }
+
+    Public function getCardName()
+    {
+        return $this->card_name;
+    }
+
+    public function setCardName($card_name): static
+    {
+        $this->card_name = $card_name;
 
         return $this;
     }
