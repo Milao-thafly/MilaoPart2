@@ -97,16 +97,4 @@ class UserPayment
 
         return $this;
     }
-
-    Public function getCardName()
-    {
-        return $this->card_name;
-    }
-
-    public function setCardName($card_name): static
-    {
-        $this->card_name = $card_name;
-
-        return $this;
-    }
 }
