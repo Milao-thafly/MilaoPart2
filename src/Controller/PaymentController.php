@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Form\PaymentFormType;
-use App\Entity\PaymentDetails;
+use App\Entity\UserPayment;
+use App\Form\UserPaymentType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,9 +15,9 @@ class PaymentController extends AbstractController
     #[Route('/payment', name: 'app_payment')]
     public function index(Request $request): Response
     {
-        $payment = new PaymentDetails();
+        $payment = new UserPayment();
 
-        $paymentForm = $this->createForm(PaymentFormType::class, $payment);
+        $paymentForm = $this->createForm(UserPaymentType::class, $payment);
         $paymentForm->handleRequest($request);
 
         if ($paymentForm->isSubmitted() && $paymentForm->isValid()) {
@@ -31,7 +31,7 @@ class PaymentController extends AbstractController
             
         }
         return $this->render('payment/payment.html.twig', [
-            'form' => $paymentForm->createView()
+            'paymentForm' => $)->createView()
         ]);
     }
 }
