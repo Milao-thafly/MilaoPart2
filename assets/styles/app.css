@@ -1,5 +1,3 @@
-
-
 @media screen and (min-width: 930px ){
 @font-face {
     font-family: 'Empiric Roman';
@@ -9,17 +7,14 @@ body{
     
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgb(0, 0, 0);
-    max-width: 1850px;
+    min-width: 930px;
     height: 100vh;
 
 
 }
 
 
-main{
-    width: 100%;
 
-}
 nav {
     display: flex;
     position: fixed;
@@ -56,7 +51,6 @@ nav {
     font-size: 16px;
     font-weight: 500;
     text-decoration: none;
-    color: #686868;
     display: inline-block;
     position: relative;
 }
@@ -65,7 +59,21 @@ nav {
     box-shadow: 0 0 10px rgba(143, 119, 119, 0.144);
 
 }
-
+.aLink{ 
+    background: none;
+    text-shadow:0 0 10px rgba(74, 190, 118, 0.527);
+    color: rgba(133, 209, 186, 0.575);
+    
+}
+.aLink:hover{
+    background-color: rgba(80, 129, 109, 0.493) ;
+    color: rgba(51, 51, 51, 0.561);
+    box-shadow: 0 0 5px rgba(80, 161, 129, 0.335),
+                0 0 10px rgba(80, 161, 128, 0.493),
+                0 0 20px rgba(80, 161, 128, 0.493),
+                0 0 50px rgba(80, 161, 128, 0.493);
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
 .navlinks-container a::after{
     content: "";
     cursor: alias;
@@ -100,8 +108,6 @@ nav {
     color: rgb(133, 209, 186);
     letter-spacing: 2px;
     transition: .5s;
-    
-
 }
 
 img{
@@ -158,10 +164,7 @@ img{
     display: flex;
     justify-content: center;
     transition: 2s;
-    width: 100%;
-    
-
-    
+    padding: 0;
 }
 
 .arrow{
@@ -204,8 +207,8 @@ img{
 }
 
 #container img{
-    width: 100%;
-    z-index: -2;
+    width: 100vw;
+    z-index: -1;
 }
 
 
@@ -215,12 +218,12 @@ img{
 }
 
 footer{
-    min-width: 1080px;
-    max-height: 50vh;
+    min-width: 930px;
+    max-height: 70vh;
     position:static;
     bottom: 0;
     border-bottom-right-radius: 5px;
-    line-height: 20px;
+    line-height: 10px;
     padding-top: 15px;
     background: linear-gradient(to right bottom, #11050157, #5069657c);
     color: #fff;
@@ -251,36 +254,35 @@ align-items: center;
 
 ul li{
     list-style:none;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 }
-@media screen and (max-width: 930px ){
+@media screen and (max-width: 929px ){
     @font-face {
         font-family: 'Empiric Roman';
         src: url(/assets/Font/empiric_roman/EMPORO.TTF);
     }
     html{
-        max-width: 929px;
+        width: 100%;
+
     }
     body{
         
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         background-color: rgb(0, 0, 0);
-        max-width: 929px;
+
 
     }
 
 
-    main{
-        max-height: 150vh;
-        max-width: 929px;
 
-    }
+    
+
     nav {
-        min-height: 80px;
         display: flex;
-        max-width:80em;
         align-items: center;
+        min-height: 10vh;
+        width:90vw;
         z-index: 10;
         background: #131212b2;
         box-shadow: inset 0px -1px 0px #c5c5c600;
@@ -299,7 +301,7 @@ ul li{
     }
 
     .logo img {
-        width: 3rem;
+        width: 1vw;
         transform: rotate(-2deg) translate(3px);
     }
 
@@ -353,33 +355,34 @@ ul li{
     }
 
 
-    #button-login{
-        position:absolute;
-        right: 7rem;
-        background: none;
-        text-transform: uppercase;
-        text-shadow:0 0 25px rgb(74, 190, 119);
-        color: rgb(133, 209, 186);
-        letter-spacing: 2px;
-        transition: .5s;
-        
 
-    }
 
     img{
-        width: 20px;
+        width: 10px;
     }
     #bzzzIcon{
         width: 40px;
     }
 
     #loginIcon{
-        width: 20px;
+        width: 10px;
         display: flex;
     }
+
+    #button-login{
+        position:absolute;
+        right: 15vw;
+        background: none;
+        text-transform: uppercase;
+        text-shadow:0 0 25px rgb(74, 190, 119);
+        color: rgb(133, 209, 186);
+        letter-spacing: 2px;
+        transition: .5s;
+    }
+
     #button-register{
             position:absolute;
-            right: 2rem;
+            right: 15vw;
             top: 1px;
             background: none;
             text-transform: uppercase;
@@ -413,13 +416,9 @@ ul li{
     #container{
         display: flex;
         justify-content: center;
-        max-width: 929px;
+        width: 90vw;
+
         
-    }
-
-    .carrousel{
-align-items: center;
-
     }
 
     .arrow{
@@ -432,7 +431,7 @@ align-items: center;
 
     #right-btn{
         height: 45px;
-        margin-right: 2vh;
+        margin-right: 2vw;
         border: none;
         outline: none;
         background: rgba(0, 0, 0, 0.233);
@@ -448,7 +447,7 @@ align-items: center;
 
     #left-btn {
         height: 45px;
-        margin-left: 1vh;
+        margin-left: 1vw;
         border: none;
         outline: none;
         background: rgba(0, 0, 0, 0.233);
@@ -464,8 +463,8 @@ align-items: center;
     }
 
     #container img{
-        width: 40em;
-        height: 58em;
+        width: 90vw;
+        height: 40rem;
         z-index: -2;
     }
 
@@ -475,16 +474,15 @@ align-items: center;
     }
 
     footer{
-            width: 35em;
+            width: 90vw;
             display: inline-block;
-            grid: 2;
+            grid: repeat(5, 1rem) / auto-flow;
             position:static;
-            bottom: 0;
-            max-height: 8rem;
+            height: 11rem;
             background: linear-gradient(to right bottom, #11050157, #5069657c);
             color: #fff;
             border-bottom-right-radius: 5px;
-            line-height: 6px;
+            line-height: 3px;
     }
 
     .linkFooter{
@@ -493,25 +491,27 @@ align-items: center;
     }
 
     .Pfooter{
-        font-size: 2vh;
+        font-size: 1.5vh;
 
     }
 
     .row{
-        width: 5%;
-
-        
-
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-evenly;
     }
 
     .col{
-        max-height: 3vh;
-        max-width: 1vh;
+
+        height: 5rem;
+        max-width: 4rem;
     }
 
     ul li{
         list-style:none;
-        margin-bottom: 2px;
+        margin-bottom: 0px;
     }
 }
 

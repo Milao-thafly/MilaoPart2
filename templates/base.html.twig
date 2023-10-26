@@ -25,7 +25,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<meta charset="UTF-8">
 	</head>
-	<body>
+	
 		<header>
 			<nav id="navbar">
 				<a href="{{ path('app_homepage') }}" class="logo" aria-label="visit homepage" aria-current="page">
@@ -40,10 +40,10 @@
 					</button>
 				</div>
 				<div class="navlinks-container">
-					<a href="{{ path('app_merch') }}">Merch</a>
-					<a href="{{ path('app_dates') }}">Dates</a>
-					<a href="{{ path('app_contact') }}">Contact</a>
-					<a href="{{ path('app_help') }}">1312</a>
+					<a class="aLink" href="{{ path('app_merch') }}">Merch</a>
+					<a class="aLink" href="{{ path('app_dates') }}">Dates</a>
+					<a class="aLink" href="{{ path('app_contact') }}">Contact</a>
+					<a class="aLink" href="{{ path('app_help') }}">1312</a>
 				</div>
 				<div>
 
@@ -63,13 +63,13 @@
 				</div>
 			</nav>
 		</header>
-	<main>
+	
 		{% block body %}{% endblock %}
-	</main>	
+	
 		
 			{% include 'footer/footer.html.twig' %}
 		
-	</body>
+	
 
 
 
