@@ -6,7 +6,7 @@
 	<table class="Profile">
 
 		<tbody>
-        {% for user in users %}
+        
 					<tr>
                     <th>Id</th>
 					<td>{{ user.id }}</td>
@@ -36,13 +36,14 @@
                     <th>Created_at</th>
 					<td>{{ user.createdAt ? user.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                     </tr>
-				{% endfor %}
+			
 		</tbody>
 
 	</table>
-            <form method="POST" action="{{ path('app_user_delete', {'id': users.id}) }}"
+<form method="POST" action="{{ path('app_user_delete', {'id': user.id}) }}"
     onsubmit="return confirm('Êtes-vous sùr de vouloir supprimer cet utilisateur intitulé: ')">
-    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ users.id) }}">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
     <button class="btnDelete"> Supprimer </button>
 </form>
+
 {% endblock %}

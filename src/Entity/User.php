@@ -18,10 +18,15 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 #[UniqueEntity(fields: ['email'], message: "L'email est déjà utilisé par un autre compte")]
 #[UniqueEntity(fields: ['username'], message: "Le username est déjà utilisé par un autre compte")]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
+/**
+ * @ORM\Column(name="id", type="integer")
+ * @ORM\id
+ * @ORM\GeneratedValue(strategy="AUTO")
+ */
 {
+    #[ORM\Column]
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
     private ?int $id = null;
 
 

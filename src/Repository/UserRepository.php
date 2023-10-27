@@ -20,6 +20,23 @@ use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
  */
 class UserRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
 {
+    public function findById(int $id): ?UserInfo
+    {
+        return $this->findOneBy(['user' => $id]);
+    }
+
+    public function findInfo(int $id)
+    {
+        // $infos = $this ->createQueryBuilder('u')
+        //               ->innerJoin(UserInfo::class, 'ui', 'WITH', 'u.id = ui.user')
+        //               ->addSelect('ui')
+        //               ->setParameter('id', $id)
+        //               ->where('u.id = :id')
+        //               ->getQuery();
+
+        //         return $infos->getResult();
+        
+    }
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, User::class);
