@@ -15,7 +15,7 @@ class ProfileController extends AbstractController
     #[Route('/profile/{id}', name: 'app_profile', methods: ['GET', 'POST'])]
     public function index(Request $request, UserRepository $userRepository, int $id): Response
     {
-        $user = $userRepository->findById[$id];
+        $user = $userRepository->findOneBy(['id' => 'user']);
 
 
         return $this->render('profile/profile.html.twig', [

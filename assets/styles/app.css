@@ -282,7 +282,7 @@ ul li{
         display: flex;
         align-items: center;
         min-height: 10vh;
-        width:90vw;
+        width:172vw;
         z-index: 10;
         background: #131212b2;
         box-shadow: inset 0px -1px 0px #c5c5c600;
@@ -474,7 +474,7 @@ ul li{
     }
 
     footer{
-            width: 90vw;
+            width: 172vw;
             display: inline-block;
             grid: repeat(5, 1rem) / auto-flow;
             position:static;

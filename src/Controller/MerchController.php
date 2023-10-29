@@ -107,9 +107,11 @@ class MerchController extends AbstractController
             $em->remove($product,true);
             $em->flush();
 
-            $this->addFlash('success', 'Product supprimé avec succès');
+            
 
             return $this->redirectToRoute('app_merch');
+
+            $this->addFlash('success', 'Product supprimé avec succès');
 
         }
         $this->addFlash('error', 'Le token n\'est pas valide');

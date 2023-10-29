@@ -26,6 +26,10 @@
             <div class="productImg"><img id="productimg" src="{{ vich_uploader_asset(product,'imageFile') }}"></div>
             </a>
     </a>        
+
+    			<a href="{{ path('home_editProduct', {'id': product.id}) }}">
+				<button type="button" id="button-modify">Modify</button>
+			</a>
         </div>
     </div>
         

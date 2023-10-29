@@ -43,8 +43,9 @@ class UserController extends AbstractController
     }
 
     #[Route('user/{id}/edit', name:'app_user_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, User $user, UserRepository $userRepository): Response
+    public function edit(Request $request, User $user, UserRepository $userRepository, int $id): Response
     {
+        // $user = $userRepository->getRepository(UserRepository::class)->findOneBy([$id => 'user']);
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
