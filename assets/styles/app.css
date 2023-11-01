@@ -474,7 +474,7 @@ ul li{
     }
 
     footer{
-            width: 172vw;
+            width: 90vw;
             display: inline-block;
             grid: repeat(5, 1rem) / auto-flow;
             position:static;
@@ -496,10 +496,9 @@ ul li{
     }
 
     .row{
-        width: 80%;
+        width: 90%;
         display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
+        flex-wrap: nowrap;
         justify-content: space-evenly;
     }
 
