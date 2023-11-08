@@ -24,9 +24,16 @@ Encore
     .addEntry('list', './assets/Javascript/list.js')
     .addEntry('addTicket', './assets/Javascript/addTicket.js')
     .addEntry('carrousel', './assets/Javascript/carrousel.js')
+    .addEntry('navbar', './assets/Javascript/navbar.js')
     .addStyleEntry('merchCreate', './assets/styles/merchCreate.css')
     .addStyleEntry('contact', './assets/styles/contact.css')
-    .addStyleEntry('merch', './assets/styles/app.css')
+    .addStyleEntry('merch', './assets/styles/merch.css')
+    .addStyleEntry('help', './assets/styles/help.css')
+    .addStyleEntry('styleapp', './assets/styles/app.css')
+    .addStyleEntry('merchRead', './assets/styles/merchRead.css')
+
+
+
 
 
 

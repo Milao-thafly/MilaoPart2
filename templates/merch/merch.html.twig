@@ -3,8 +3,7 @@
 {% block title %}Hello MerchController!{% endblock %}
 
 {% block current_css %}
-    {# <link rel="stylesheet" href="{{ asset('asset/style/merch.css') }}"> #}
-          {{ encore_entry_link_tags('merch') }}
+    <link rel="stylesheet" href="{{ asset('public/build/merch.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -15,15 +14,29 @@
 </div>
 {% endfor %}
 
-<main
 
 
-{% for product in products %}
-    <div class="merch">
-        <a href="{{path ('home_editProduct', {id: product.id}) }}">{{ product.name }}</a>
-        <p>{{ product.name }}</p>
+<div class="product">
+    {% for product in products %}
+    <div class="shadow">
+    <a href="productsell"
+        <div class="merch">
+            <a id="productName" href="{{path ('merch_readProduct', {id: product.id}) }}">
+            <p>{{ product.name }}</p>
+            <div class="productImg"><img id="productimg" src="{{ vich_uploader_asset(product,'imageFile') }}"></div>
+            </a>
+    </a>        
+
+    			<a href="{{ path('home_editProduct', {'id': product.id}) }}">
+				<button type="button" id="button-modify">Modify</button>
+			</a>
+        </div>
     </div>
-    
-{% endfor %}
-</main>
+        
+    {% endfor %}
+</div>
+			<a href="{{ path('home_createProduct') }}">
+				<button type="button" id="button-create">Create</button>
+			</a>
+
 {% endblock %}

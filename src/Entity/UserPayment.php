@@ -14,6 +14,10 @@ class UserPayment
     #[ORM\Column]
     private ?int $id = null;
 
+    #[ORM\Column]
+    private ?string $card_name = null;
+
+
     #[ORM\Column(length: 255)]
     private ?string $payment_type = null;
 

@@ -1,0 +1,150 @@
+/* 
+.productRead{
+    display: flex;
+    justify-content: center;
+    padding-top: 15vh;
+}
+
+.shadowRead{
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    width: 60%;
+    align-items: center;
+    box-shadow: 10px 15px rgba(112, 71, 71, 0.13);
+    border-radius: 40px;
+    background: linear-gradient(#2d555286,rgba(255, 102, 255, 0.048));
+}
+
+.merchRead{
+    display: flex;
+    justify-content:flex-end;    
+    height: 500px;  
+}
+
+#productimgRead{
+width: 100%;
+margin-top: 10vh;
+padding-bottom: 5vh;
+margin-left: 20vh;
+}
+
+#productNameRead{
+margin-top: 25rem;
+
+}
+
+#button-create{
+    width: 100px;
+    position:fixed;
+    right: 3rem;
+    bottom: 400px;
+    background: none;
+    text-transform: uppercase;
+    text-shadow:0 0 25px rgb(74, 190, 119);
+    color: rgb(133, 209, 186);
+    letter-spacing: 2px;
+    transition: .5s;
+    overflow: hidden;
+}
+
+#button-create:hover{
+    background-color: rgba(80, 129, 109, 0.493) ;
+    color: rgb(37, 37, 37);
+    box-shadow: 0 0 5px rgba(80, 161, 129, 0.335),
+                0 0 25px rgba(80, 161, 128, 0.493),
+                0 0 50px rgba(80, 161, 128, 0.493),
+                0 0 200px rgba(80, 161, 128, 0.493);
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+#productPriceRead{
+    margin-top: 25rem;
+   
+}
+
+.selectSize{
+    height: 5vh;
+    width: 10vh;
+
+}
+
+
+#btnBuy{
+    height: 10vh;
+    width: 90%;
+    display:inline;
+    justify-content:end;
+    margin-top: 40vh;
+    
+} */
+
+
+.productRead{
+    display: flex;
+    justify-content: center;
+    padding-top: 15vh;
+}
+
+.shadowRead{
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    width: 50%;
+    align-items: center;
+    box-shadow: 10px 15px rgba(112, 71, 71, 0.13);
+    border-radius: 40px;
+    background: linear-gradient(#2d555286,rgba(255, 102, 255, 0.048));
+}
+
+.merchRead{
+    display: flex;
+    justify-content:flex-end;    
+    height: 500px;  
+}
+
+#productImg{
+margin-top: 5vh;
+padding-bottom: 5vh;
+margin-left: 15vh;
+}
+
+#productNameRead{
+margin-top: 25rem;
+
+}
+
+#button-create{
+    width: 100px;
+    position:fixed;
+    right: 3rem;
+    bottom: 400px;
+    background: none;
+    text-transform: uppercase;
+    text-shadow:0 0 25px rgb(74, 190, 119);
+    color: rgb(133, 209, 186);
+    letter-spacing: 2px;
+    transition: .5s;
+    overflow: hidden;
+}
+
+#button-create:hover{
+    background-color: rgba(80, 129, 109, 0.493) ;
+    color: rgb(37, 37, 37);
+    box-shadow: 0 0 5px rgba(80, 161, 129, 0.335),
+                0 0 25px rgba(80, 161, 128, 0.493),
+                0 0 50px rgba(80, 161, 128, 0.493),
+                0 0 200px rgba(80, 161, 128, 0.493);
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+#productPriceRead{
+    margin-top: 25rem;
+   
+}
+
+.selectSize{
+    padding-bottom: 15vh;
+}
+
+

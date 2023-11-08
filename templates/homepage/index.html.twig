@@ -1,8 +1,12 @@
 {% extends 'base.html.twig' %}
 
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+			{% block current_css %}{% endblock %}
+		{% endblock %}
+
+
+        
 
 {% block title %} Milao {% endblock %}
 
@@ -12,50 +16,34 @@
 <main>
 
 
-    <section id="container">
-        <button class="previous">Avant</button>
+    <div id="container">
+        <button id="left-btn"><i class="arrow"></i></button>
 
-        <figure>
-            {# <img src="./assets/img/n.jpg" alt=""> #}
-            <img src="{{ asset('/public/img/n.jpg') }}" alt="Symfony!"/>
-            <figcaption>Milao flies everywhere</figcaption>
-        </figure>
 
-        <figure>
-            {# <img src="./assets/img/0068.pgn" alt=""> #}
-            <img src="{{ asset('/assets/img/0068.png') }}" alt="Symfony!"/>
-            <figcaption>Animal in forest</figcaption>
-        </figure>
+            <figure>
+                <img class="carrousel" src="{{ asset('/img/n.jpg') }}" alt="Animal!"/>
+            
+            </figure>   
+            <figure>     
+                <img class="carrousel" src="{{ asset('/img/Forest.png') }}" alt="Animal!"/>
+            </figure> 
 
-        <figure>
-            {# <img src="./assets/img/0000.pgn" alt=""> #}
-            <img src="{{ asset('/img/0000.png') }}" alt="Symfony!"/>
-            <figcaption>The hostel</figcaption>
-        </figure>
+            <figure>    
+                <img class="carrousel" src="{{ asset('/img/hostel.png') }}" alt="pray"/>
+            </figure> 
 
-    {# <div class="caroussel">
-        <ul>
-            <li class="slide">
-                <img src={{ asset('img/n.jpg') }}
-                <img src="./assets/img/0068.png" alt="forest shid">
-                <img src="./assets/img/0000.png" alt="3D hd">
+        <button id="right-btn"><i class="arrow"></i></button>
 
-            </li>
-        </ul>
-    </div> #}
-    <button class="next">Après</button>
-</section>
+    </div>
 
-<script src="script.js"></script>  
 
 </main>
 
-<footer>
-</footer>
 
 {% endblock %}
 
-{% block current_javascript %}
-{{ encore_entry_script_tags('carrousel') }}
+{% block javascripts %}
+			{{ encore_entry_script_tags('carrousel') }}
 {% endblock %}
+
 

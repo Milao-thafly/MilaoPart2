@@ -2,11 +2,13 @@
 
 namespace App\Entity;
 
+use App\Entity\Product;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -16,11 +18,17 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 #[UniqueEntity(fields: ['email'], message: "L'email est déjà utilisé par un autre compte")]
 #[UniqueEntity(fields: ['username'], message: "Le username est déjà utilisé par un autre compte")]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
+/**
+ * @ORM\Column(name="id", type="integer")
+ * @ORM\id
+ * @ORM\GeneratedValue(strategy="AUTO")
+ */
 {
+    #[ORM\Column]
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
     private ?int $id = null;
+
 
     #[ORM\Column(length: 180, unique: true)]
     private ?string $username = null;
@@ -63,6 +71,55 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Product::class)]
     private Collection $Product;
+
+    // #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'imageName', size: 'imageSize')]
+    // private ?File $imageFile = null;
+
+    // #[ORM\Column(length: 255)]
+    // private ?string $imageName = null;
+
+    // #[ORM\Column(type: 'integer')]
+    // private ?int $imageSize = null;
+
+    // public function setImageFile(?File $imageFile = null): void
+    // {
+    //     $this->imageFile = $imageFile;
+
+    //     if (null !== $imageFile) {
+
+    //         $this->modified_at = new \DateTimeImmutable();
+
+    //     }
+    // }
+
+    // public function getImageFile(): ?File
+    // {
+    //     return $this->imageFile;
+    // }
+    
+    // /**
+    //  * Get the value of imageName
+    //  */ 
+
+    // public function getImageName()
+    // {
+    //     return $this->imageName;
+    // }
+
+    // public function setImageName(?string $imageName): void 
+    // {
+    //     $this->imageName = $imageName;
+    // }
+
+    // public function setImageSize(?int $imageSize): void 
+    // {
+    //     $this->imageSize = $imageSize;
+    // }
+
+    // public function getImageSize(): ?int
+    // {
+    //     return $this->imageSize;
+    // }
 
     public function __construct()
     {
@@ -243,7 +300,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->Product->contains($product)) {
             $this->Product->add($product);
-            $product->setUser($this);
+            $product->setUser_Id($this);
         }
 
         return $this;
@@ -253,8 +310,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if ($this->Product->removeElement($product)) {
             // set the owning side to null (unless already changed)
-            if ($product->getUser() === $this) {
-                $product->setUser(null);
+            if ($product->getUser_Id() === $this) {
+                $product->setUser_Id(null);
             }
         }
 

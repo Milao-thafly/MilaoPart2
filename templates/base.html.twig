@@ -1,53 +1,52 @@
-<!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<title>
-			{% block title %}Welcome!
-			{% endblock %}
-		</title>
-		<link rel="icon" href="../assets/img/fly_PNG3950.png">
+
+
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 			{% block current_css %}{% endblock %}
 		{% endblock %}
 
+
 		{% block javascripts %}
 			{{ encore_entry_script_tags('app') }}
 			{% block current_javascript %}{% endblock %}
-
 		{% endblock %}
+
+
+
+		<title>
+			{% block title %}Milao
+			{% endblock %}
+		</title>
+
+
+		<meta name="description" content="Welcome in Milao ressel ticket and merch and give news">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta charset="UTF-8">
 	</head>
-	<body>
+	
 		<header>
 			<nav id="navbar">
-				<a href="{{ path('app_homepage') }}" class="logo" aria-label="visit homepage" aria-current="page"><img src="{{ asset('../assets/img/fly_PNG3950.png')}}" alt="Bzzz icon">
+				<a href="{{ path('app_homepage') }}" class="logo" aria-label="visit homepage" aria-current="page">
+				<img id="bzzzIcon" src="{{ asset('./img/fly_PNG3950.png')}}" alt="Bzzz icon">
 					<span>
 						Flies everywhere
 					</span>
 				</a>
-				<div class="nav-links">
-					<button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">
-						<span></span>
-						<span></span>
-						<span></span>
-					</button>
+				<div class="hamburger" class="active">
+
 				</div>
 				<div class="navlinks-container">
-					<a href="{{ path('app_merch') }}">Merch</a>
-					<a href="{{ path('app_dates') }}">Dates</a>
-					<a href="{{ path('app_contact') }}">Contact</a>
-					<a href="{{ path('app_this1312') }}">1312</a>
+					<a class="aLink" href="{{ path('app_merch') }}">Merch</a>
+					<a class="aLink" href="{{ path('app_dates') }}">Dates</a>
+					<a class="aLink" href="{{ path('app_contact') }}">Contact</a>
+					<a class="aLink" href="{{ path('app_help') }}">1312</a>
 				</div>
 				<div>
-					<a href="#" class="user_toggler" aria-label="Sign in page">
-						<img src="./assets/img/fly_PNG3950.png" alt="user_icon">
-					</a>
 
 					<div>
-						<a href="#" class="user_toggler" aria-label="Sign in page">
-							<img src="./assets/img/fly_PNG3950.png" alt="user_icon">
-						</a>
+
 
 						<div class="signs-btns">
 							<a href="{{ path('app_register') }}">
@@ -62,6 +61,14 @@
 				</div>
 			</nav>
 		</header>
+	
 		{% block body %}{% endblock %}
-	</body>
+	
+		
+			{% include 'footer/footer.html.twig' %}
+		
+	
+
+
+<script src={{ asset('/public/build/navbar.js')}}></script>
 </html>

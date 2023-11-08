@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfileController!{% endblock %}
+
+{% block body %}
+	<table class="Profile">
+
+		<tbody>
+        
+					<tr>
+                    <th>Id</th>
+					<td>{{ user.id }}</td>
+                    </tr>
+                    
+                    <tr>
+                    <th>Email</th>
+					<td>{{ user.email }}</td>
+                    </tr>
+
+                    <tr>
+                    <th>Roles</th>
+					<td>{{ user.roles ? user.roles|json_encode : ''}}</td>
+                    </tr>
+
+                    <tr>
+                    <th>Password</th>
+					<td>{{ user.password }}</td>
+                    </tr>
+
+                    <tr>
+                    <th>username</th>
+					<td>{{ user.username }}</td>
+                    </tr>
+
+                    <tr>
+                    <th>Created_at</th>
+					<td>{{ user.createdAt ? user.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                    </tr>
+			
+		</tbody>
+
+	</table>
+<form method="POST" action="{{ path('app_user_delete', {'id': user.id}) }}"
+    onsubmit="return confirm('Êtes-vous sùr de vouloir supprimer cet utilisateur intitulé: ')">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+    <button class="btnDelete"> Supprimer </button>
+</form>
+
+{% endblock %}

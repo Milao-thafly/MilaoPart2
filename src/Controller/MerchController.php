@@ -10,19 +10,30 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class MerchController extends AbstractController
 {
+    /**
+     * Undocumented function
+     *
+     * @param ProductRepository $repoProduct will just find all the product in my repository
+     *     ProductRepository va juste aller chercher les produits dans le repository.
+
+     * @return Response
+     */
+
     #[Route('/merch', name: 'app_merch')]
     public function index(ProductRepository $repoProduct): Response
-    {
+    {   
+        //Here my var $product are equal to findAll the product in the ProductRepository
+        // Ici ma variable $product est équivalent à appeller tout mes produits dans le ProductRepository
         $products = $repoProduct->findAll();
-        //A faire vérifier que je récupère ce que je veux avec le var
 
 
         return $this->render('merch/merch.html.twig', [
-            // 'controller_name' => 'MerchController',
+
             'products' => $products,
         ]);
     }
@@ -96,9 +107,11 @@ class MerchController extends AbstractController
             $em->remove($product,true);
             $em->flush();
 
-            $this->addFlash('success', 'Product supprimé avec succès');
+            
 
             return $this->redirectToRoute('app_merch');
+
+            $this->addFlash('success', 'Product supprimé avec succès');
 
         }
         $this->addFlash('error', 'Le token n\'est pas valide');
@@ -106,9 +119,9 @@ class MerchController extends AbstractController
         return $this->redirectToRoute('app_merch');
     }
     #[Route('/merch/read/{id}', name: 'merch_readProduct', methods: 'GET|POST')]
-    public function show(ProductRepository $repoProduct, int $id): Response
+    public function show(ProductRepository $repoProduct, Product $product,int $id): Response
     {
-        $product = $repoProduct->find($product);
+        $products = $repoProduct->find($product);
         return $this->render('merch/merchRead.html.twig', [
             'product' => $product,
         ]);

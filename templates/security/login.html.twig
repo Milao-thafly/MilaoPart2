@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 {% block current_css %}
-    {# <link rel="stylesheet" href="{{ asset('asset/style/merch.css') }}"> #}
           {{ encore_entry_link_tags('app') }}
 {% endblock %}
 
@@ -8,6 +7,8 @@
 Se connecter|
 {{ parent() }}
 {% endblock %}
+
+
 
 {% block body %}
 		<div class="container">
@@ -19,32 +20,41 @@ Se connecter|
                 }}
 					</div>
 				{% endif %}
+	{% if app.user %}
+
+		<div class="mb-3">
+			You are logged in as
+			{{ app.user.username }},
+			<a href="{{ path('app_homepage') }}">Deconnexion</a>
+		</div>
+
+	{% else %}
+
+					<h1 class="title">
+						Se connecter
+					</h1>
+
+					<div>
+					<label for="username" class="form-label">
+						Username
+					</label>
+					<input type="text" id="username" name="_username" value="{{ last_username }}"
+					name="email" id="inputEmail" class="form__input" autocomplete="email" required autofocus/>
+					</div>
+
+					<label for="password" class="form-label">
+						Mot de passe
+					</label>
+					<input type="password" id="password" name="_password" class="form-control" autocomplete="current-password" required>
+
+					<a href="#" class="forgot_link">Mot de passe oublié ?</a>
+					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
 
-				<h1 class="title">
-					Se connecter
-				</h1>
-
-                
-				<label for="username" class="form-label">
-					Username
-				</label>
-				<input type="text" id="username" name="_username" value="{{ last_username }}"/>
-
-
-				<label for="password" class="form-label">
-					Mot de passe
-				</label>
-				<input type="password" id="password" name="_password" class="form-control">
-
-                
-                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-
-				<div class="subLog">
-					<button type="submit" class="btnLog">
-						Se connecter</button>
-				</div>
-			</form>
-
+					<div class="subLog">
+						<button class="btnLog" type="submit">
+							Se connecter</button>
+					</div>
+				</form>
+	{% endif %}
 {% endblock %}

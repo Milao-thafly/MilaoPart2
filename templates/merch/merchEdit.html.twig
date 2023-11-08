@@ -3,13 +3,12 @@
 {% block title %}Hello MerchController!{% endblock %}
 
 {% block current_css %}
-    {# <link rel="stylesheet" href="{{ asset('asset/style/merch.css') }}"> #}
           {{ encore_entry_link_tags('merch') }}
 {% endblock %}
 
 {% block body %}
 
-<main>
+
 {{ form_start(form) }}
 
 {{ form_end(form) }}
@@ -21,5 +20,4 @@
     <button class="btnDelete"> Supprimer </button>
 </form>
 
-</main>
 {% endblock %}
