@@ -28,14 +28,12 @@ left() {
     this.affichage();
 }
 
-affichage(){
-    for (const image of this.img){
-        image.style.display = "none";
+    affichage() {
+        for (const image of this.images) {
+            images.style.display ="none";
+        }
+        this.images[this.index].style.display = "block";
     }
-    this.img[this.index].style.display = "block";
-
 }
 
-}
-
-const diaporama = new Diaporama("container")
+const diaporama = new Diaporama("container");
