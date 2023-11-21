@@ -3,6 +3,11 @@
         font-family: 'Empiric Roman';
         src: url(/assets/Font/empiric_roman/EMPORO.TTF);
     }
+    header{
+        position: sticky;
+        top: 0;
+        width: 100%;
+    }
     body{
         
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -15,7 +20,7 @@
     
     nav {
         display: flex;
-        position: fixed;
+        position: sticky;
         width: 100%;
         align-items: center;
         padding: 10px 2px;
