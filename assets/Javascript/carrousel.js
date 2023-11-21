@@ -5,7 +5,7 @@ constructor(idContainer){
     this.container = document.getElementById(idContainer);
     this.leftBtn = this.container.querySelector("#left-btn");
     this.rightBtn = this.container.querySelector("#right-btn");
-    this.img = this.container.querySelectorAll("figure");
+    this.images = this.container.querySelectorAll("figure");
     this.index = 0;
     this.affichage();
     this.rightBtn.addEventListener("click", () => { this.right() })
@@ -14,23 +14,23 @@ constructor(idContainer){
 }
 
 right() {
-    console.log(this);
+    
     var index = this.index++;
     console.log(index)
-    if (this.index >= this.img.length) this.index = 0;
+    if (this.index >= this.images.length) this.index = 0;
     this.affichage();
 }
 
 left() {
     var index = this.index--;
     console.log(index)
-    if (this.index < 0) this.index = this.img.length -1;
+    if (this.index < 0) this.index = this.images.length -1;
     this.affichage();
 }
 
     affichage() {
         for (const image of this.images) {
-            images.style.display ="none";
+            image.style.display ="none";
         }
         this.images[this.index].style.display = "block";
     }

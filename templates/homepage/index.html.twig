@@ -1,49 +1,77 @@
 {% extends 'base.html.twig' %}
 
-		{% block stylesheets %}
-			{{ encore_entry_link_tags('app') }}
-			{% block current_css %}{% endblock %}
-		{% endblock %}
+{% block stylesheets %}
+	{{ encore_entry_link_tags('app') }}
+	{% block current_css %}{% endblock %}
+{% endblock %}
 
 
-        
-
-{% block title %} Milao {% endblock %}
+{% block title %}
+	Milao
+{% endblock %}
 
 {% block body %}
 
 
-<main>
+	<main>
 
 
-    <div id="container">
-        <button id="left-btn"><i class="arrow"></i></button>
+		<div id="container">
+			<button id="left-btn">
+				<i class="arrow"></i>
+			</button>
 
 
-            <figure>
-                <img class="carrousel" src="{{ asset('/img/n.jpg') }}" alt="Animal!"/>
-            
-            </figure>   
-            <figure>     
-                <img class="carrousel" src="{{ asset('/img/Forest.png') }}" alt="Animal!"/>
-            </figure> 
+			<figure>
+				<img class="carrousel" src="{{ asset('/img/n.jpg') }}" alt="Animal!"/>
 
-            <figure>    
-                <img class="carrousel" src="{{ asset('/img/hostel.png') }}" alt="pray"/>
-            </figure> 
+			</figure>
+			<figure>
+				<img class="carrousel" src="{{ asset('/img/Forest.png') }}" alt="Animal!"/>
+			</figure>
 
-        <button id="right-btn"><i class="arrow"></i></button>
+			<figure>
+				<img class="carrousel" src="{{ asset('/img/hostel.png') }}" alt="pray"/>
+			</figure>
 
-    </div>
+			<button id="right-btn">
+				<i class="arrow"></i>
+			</button>
 
 
-</main>
+
+		</div>
+		
+		<div id="alt_site">
+        	<a  href="{{ relative_path('https://soundcloud.com') }}">
+				<img src="{{ asset('build/images/SoundCloud_logo.png') }}">
+			</a>
+
+            <a href="{{ relative_path('https://spotify.com') }}">
+				<img src="{{ asset('build/images/spotify_icon.76d983e1.png') }}">
+			</a>
+
+			<a href="{{ relative_path('https://instagram.com') }}">
+				<img src="{{ asset('build/images/instagram_logo.263cdf8b.png') }}">
+			</a>
+
+			<a href="{{ relative_path('https://facebook.com') }}">
+				<img src="{{ asset('build/images/facebook_logo.0a0d6018.png') }}">
+			</a>
+
+			<a href="{{ relative_path('https://youtube.com') }}">
+				<img src="{{ asset('build/images/youtube_logo.075e1419.png') }}">
+			</a>
+			
+		</div>
+
+
+	</main>
 
 
 {% endblock %}
 
 {% block javascripts %}
-			{{ encore_entry_script_tags('carrousel') }}
+	{{ parent() }}
+	{{ encore_entry_script_tags('carrousel') }}
 {% endblock %}
-
-

@@ -27,19 +27,9 @@ class Product
     #[ORM\Column]
     private ?int $SKU = null;
 
-    #[ORM\Column]
-    private ?int $category_id = null;
-
-    #[ORM\Column]
-    private ?int $inventory_id = null;
 
     #[ORM\Column]
     private ?int $price = null;
-
-    #[ORM\Column]
-    private ?int $discount_id = null;
-
-
 
     // #[ORM\Column(length: 255, unique:true)]
     // #[Gedmo\Slug(fields: ['id' ])]
@@ -55,15 +45,6 @@ class Product
     #[Gedmo\Timestampable(on: 'update')]
     private ?\DateTimeImmutable $modified_at = null;
 
-
-
-
-    #[ORM\ManyToOne(inversedBy: 'Product')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?User $user = null;
-
-
-
     #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'imageName', size: 'imageSize')]
     private ?File $imageFile = null;
 
@@ -72,6 +53,26 @@ class Product
 
     #[ORM\Column(type: 'integer')]
     private ?int $imageSize = null;
+
+    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'product_id')]
+    private Collection $user_id;
+
+    #[ORM\ManyToMany(targetEntity: ProductInventory::class, inversedBy: 'product_id')]
+    private Collection $inventory_id;
+
+    #[ORM\ManyToMany(targetEntity: ProductCategory::class, inversedBy: 'product_id')]
+    private Collection $category_id;
+
+    #[ORM\ManyToMany(targetEntity: Discount::class, inversedBy: 'product_id')]
+    private Collection $discount_id;
+
+    public function __construct()
+    {
+        $this->user_id = new ArrayCollection();
+        $this->inventory_id = new ArrayCollection();
+        $this->category_id = new ArrayCollection();
+        $this->discount_id = new ArrayCollection();
+    }
 
     public function setImageFile(?File $imageFile = null): void
     {
@@ -142,29 +143,6 @@ class Product
         return $this;
     }
 
-    public function getCategoryId(): ?int
-    {
-        return $this->category_id;
-    }
-
-    public function setCategoryId(int $category_id): static
-    {
-        $this->category_id = $category_id;
-
-        return $this;
-    }
-
-    public function getInventoryId(): ?int
-    {
-        return $this->inventory_id;
-    }
-
-    public function setInventoryId(int $inventory_id): static
-    {
-        $this->inventory_id = $inventory_id;
-
-        return $this;
-    }
 
     public function getPrice(): ?int
     {
@@ -174,18 +152,6 @@ class Product
     public function setPrice(int $price): static
     {
         $this->price = $price;
-
-        return $this;
-    }
-
-    public function getDiscountId(): ?int
-    {
-        return $this->discount_id;
-    }
-
-    public function setDiscountId(int $discount_id): static
-    {
-        $this->discount_id = $discount_id;
 
         return $this;
     }
@@ -215,17 +181,6 @@ class Product
     }
 
 
-    public function getUser_Id(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser_Id(?User $user): self
-    {
-        $this->user = $user;
-
-        return $this;
-    }
 
     // public function addUser(self $user): static
     // {
@@ -289,6 +244,102 @@ class Product
     public function setProduct(?self $product): static
     {
         $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUserId(): Collection
+    {
+        return $this->user_id;
+    }
+
+    public function addUserId(User $userId): static
+    {
+        if (!$this->user_id->contains($userId)) {
+            $this->user_id->add($userId);
+        }
+
+        return $this;
+    }
+
+    public function removeUserId(User $userId): static
+    {
+        $this->user_id->removeElement($userId);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ProductInventory>
+     */
+    public function getInventoryId(): Collection
+    {
+        return $this->inventory_id;
+    }
+
+    public function addInventoryId(ProductInventory $inventoryId): static
+    {
+        if (!$this->inventory_id->contains($inventoryId)) {
+            $this->inventory_id->add($inventoryId);
+        }
+
+        return $this;
+    }
+
+    public function removeInventoryId(ProductInventory $inventoryId): static
+    {
+        $this->inventory_id->removeElement($inventoryId);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ProductCategory>
+     */
+    public function getCategoryId(): Collection
+    {
+        return $this->category_id;
+    }
+
+    public function addCategoryId(ProductCategory $categoryId): static
+    {
+        if (!$this->category_id->contains($categoryId)) {
+            $this->category_id->add($categoryId);
+        }
+
+        return $this;
+    }
+
+    public function removeCategoryId(ProductCategory $categoryId): static
+    {
+        $this->category_id->removeElement($categoryId);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Discount>
+     */
+    public function getDiscountId(): Collection
+    {
+        return $this->discount_id;
+    }
+
+    public function addDiscountId(Discount $discountId): static
+    {
+        if (!$this->discount_id->contains($discountId)) {
+            $this->discount_id->add($discountId);
+        }
+
+        return $this;
+    }
+
+    public function removeDiscountId(Discount $discountId): static
+    {
+        $this->discount_id->removeElement($discountId);
 
         return $this;
     }

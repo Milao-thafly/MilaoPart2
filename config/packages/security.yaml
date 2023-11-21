@@ -20,9 +20,10 @@ security:
             form_login:
                 login_path: app_security
                 check_path: app_security
+                default_target_path: /homepage
             logout:
                 path: /logout
-                target: /
+                target: /homepage
         
 
             # activate different ways to authenticate

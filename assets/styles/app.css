@@ -13,14 +13,13 @@
     
     }
     
-    
-    
     nav {
         display: flex;
         position: fixed;
         width: 100%;
         align-items: center;
         padding: 10px 2px;
+        margin-bottom: 50px;
         z-index: 10;
         background: #131212b2;
         box-shadow: inset 0px -1px 0px #c5c5c600;
@@ -47,8 +46,8 @@
         display: none;
     }
     .navlinks-container a {
-        margin: 0 10px;
         font-size: 16px;
+        margin: 0 10px;
         font-weight: 500;
         text-decoration: none;
         display: inline-block;
@@ -147,7 +146,7 @@
     }
     
     #button-register:hover{
-        background-color: rgba(80, 129, 109, 0.493) ;
+        background-color: rgb(172, 172, 172) ;
         color: #333;
         box-shadow: 0 0 5px rgba(80, 161, 129, 0.335),
                     0 0 25px rgba(80, 161, 128, 0.493),
@@ -166,7 +165,21 @@
         transition: 2s;
         padding: 0;
     }
-    
+    #alt_site{
+        display: flex;
+        margin-bottom: 10vh;
+        width: 8vw;
+        height: 8vh;
+    }
+
+    #alt_site img{
+        display: flex;
+        
+        width: 8vw;
+        height: 8vh;
+    }
+
+
     .arrow{
         border: solid rgb(12, 29, 21);
         border-width: 0 2px 2px 0;
@@ -174,7 +187,10 @@
         padding: 7px;
         transition: transform 0.3s ease-out;
     }
-    
+    /*
+    Stylize button for the caroussel in Javascript.
+    */
+
     #right-btn{
         height: 45px;
         border: none;
@@ -388,7 +404,7 @@
     
         #button-login{
             position:absolute;
-            right: 15vw;
+            right: 6vw;
             background: none;
             text-transform: uppercase;
             text-shadow:0 0 25px rgb(74, 190, 119);
@@ -399,7 +415,7 @@
     
         #button-register{
                 position:absolute;
-                right: 15vw;
+                right: 6vw;
                 top: 1px;
                 background: none;
                 text-transform: uppercase;

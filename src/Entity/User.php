@@ -69,61 +69,24 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Gedmo\Timestampable(on: 'update')]
     private ?\DateTimeImmutable $updated_at = null;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Product::class)]
-    private Collection $Product;
+    #[ORM\ManyToMany(targetEntity: Product::class, mappedBy: 'user_id')]
+    private Collection $product_id;
 
-    // #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'imageName', size: 'imageSize')]
-    // private ?File $imageFile = null;
+    #[ORM\ManyToOne(inversedBy: 'user_id')]
+    private ?Useradress $user_adress = null;
 
-    // #[ORM\Column(length: 255)]
-    // private ?string $imageName = null;
+    #[ORM\ManyToOne(inversedBy: 'user_id')]
+    private ?Userinfo $user_info = null;
 
-    // #[ORM\Column(type: 'integer')]
-    // private ?int $imageSize = null;
+    #[ORM\ManyToOne(inversedBy: 'user_id')]
+    private ?UserPayment $user_payment = null;
 
-    // public function setImageFile(?File $imageFile = null): void
-    // {
-    //     $this->imageFile = $imageFile;
 
-    //     if (null !== $imageFile) {
-
-    //         $this->modified_at = new \DateTimeImmutable();
-
-    //     }
-    // }
-
-    // public function getImageFile(): ?File
-    // {
-    //     return $this->imageFile;
-    // }
-    
-    // /**
-    //  * Get the value of imageName
-    //  */ 
-
-    // public function getImageName()
-    // {
-    //     return $this->imageName;
-    // }
-
-    // public function setImageName(?string $imageName): void 
-    // {
-    //     $this->imageName = $imageName;
-    // }
-
-    // public function setImageSize(?int $imageSize): void 
-    // {
-    //     $this->imageSize = $imageSize;
-    // }
-
-    // public function getImageSize(): ?int
-    // {
-    //     return $this->imageSize;
-    // }
 
     public function __construct()
     {
         $this->Product = new ArrayCollection();
+        $this->product_id = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -314,6 +277,69 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $product->setUser_Id(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Product>
+     */
+    public function getProductId(): Collection
+    {
+        return $this->product_id;
+    }
+
+    public function addProductId(Product $productId): static
+    {
+        if (!$this->product_id->contains($productId)) {
+            $this->product_id->add($productId);
+            $productId->addUserId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProductId(Product $productId): static
+    {
+        if ($this->product_id->removeElement($productId)) {
+            $productId->removeUserId($this);
+        }
+
+        return $this;
+    }
+
+    public function getUserAdress(): ?Useradress
+    {
+        return $this->user_adress;
+    }
+
+    public function setUserAdress(?Useradress $user_adress): static
+    {
+        $this->user_adress = $user_adress;
+
+        return $this;
+    }
+
+    public function getUserInfo(): ?Userinfo
+    {
+        return $this->user_info;
+    }
+
+    public function setUserInfo(?Userinfo $user_info): static
+    {
+        $this->user_info = $user_info;
+
+        return $this;
+    }
+
+    public function getUserPayment(): ?UserPayment
+    {
+        return $this->user_payment;
+    }
+
+    public function setUserPayment(?UserPayment $user_payment): static
+    {
+        $this->user_payment = $user_payment;
 
         return $this;
     }

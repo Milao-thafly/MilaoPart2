@@ -3,9 +3,13 @@
 namespace App\Form;
 
 use App\Entity\Product;
+use App\Entity\Discount;
+use App\Entity\ProductCategory;
+use App\Entity\ProductInventory;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Vich\UploaderBundle\Form\Type\VichImageType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\DateTime;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -19,25 +23,55 @@ class EditFormType extends AbstractType
         $builder
             ->add('name',TextType::class, [
                 'label' => 'Nom:',
-                'required' => true
+                'required' => true,
+                'attr' => [
+                    'class' => 'inputForm'
+                ]
             ])
             ->add('SKU', NumberType::class, [
                 'label' => 'SKU:',
-                'required' => true
+                'required' => true,
+                'attr' => [
+                    'class' => 'inputForm'
+                ]
             ])
-            ->add('category_id', NumberType::class, [
-                'label' => 'IdCategory:'
+            ->add('category_id', EntityType::class, [
+                'class' => ProductCategory::class,
+                'label' => 'Categories:',
+                'choice_label' => 'name',
+                'expanded' => true,
+                'multiple' => true,
+                'attr' => [
+                    'class' => 'inputForm'
+                ]
 
             ])
-            ->add('inventory_id', NumberType::class , [
-                'label' => 'IdInventory:'
+            ->add('inventory_id', EntityType::class , [
+                'class' => ProductInventory::class,
+                'label' => 'Inventory:',
+                'choice_label' => 'name',
+                'expanded' => true,
+                'multiple' => true,
+                'attr' => [
+                    'class' => 'inputForm'
+                ]
             ])
             ->add('price', NumberType::class, [
                 'label' => 'Prix:',
-                'required' => true
+                'required' => true,
+                'attr' => [
+                    'class' => 'inputForm'
+                ]
             ])
-            ->add('discount_id', NumberType::class, [
-                'label' => 'Discount'
+            ->add('discount_id', EntityType::class, [
+                'class' => Discount::class,
+                'label' => 'Discount',
+                'choice_label' => 'name',
+                'expanded' => true,
+                'multiple' => true,
+                'attr' => [
+                    'class' => 'inputForm'
+                ]
             ])
 
             ->add('imageFile', VichImageType::class, [
@@ -46,6 +80,9 @@ class EditFormType extends AbstractType
                 'image_uri' => true, 
                 'asset_helper' => true,
                 'label' => 'Image',
+                'attr' => [
+                    'class' => 'inputForm'
+                ]
             ])
 
             ->add('Save', SubmitType::class, [

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UseradressRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: UseradressRepository::class)]
@@ -12,9 +14,6 @@ class Useradress
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
-
-    #[ORM\Column]
-    private ?int $user_id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $adress_line1 = null;
@@ -37,22 +36,19 @@ class Useradress
     #[ORM\Column(nullable: true)]
     private ?int $mobile = null;
 
+    #[ORM\OneToMany(mappedBy: 'user_adress', targetEntity: User::class)]
+    private Collection $user_id;
+
+    public function __construct()
+    {
+        $this->user_id = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getUserId(): ?int
-    {
-        return $this->user_id;
-    }
-
-    public function setUserId(int $user_id): static
-    {
-        $this->user_id = $user_id;
-
-        return $this;
-    }
 
     public function getAdressLine1(): ?string
     {
@@ -134,6 +130,36 @@ class Useradress
     public function setMobile(?int $mobile): static
     {
         $this->mobile = $mobile;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUserId(): Collection
+    {
+        return $this->user_id;
+    }
+
+    public function addUserId(User $userId): static
+    {
+        if (!$this->user_id->contains($userId)) {
+            $this->user_id->add($userId);
+            $userId->setUserAdress($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUserId(User $userId): static
+    {
+        if ($this->user_id->removeElement($userId)) {
+            // set the owning side to null (unless already changed)
+            if ($userId->getUserAdress() === $this) {
+                $userId->setUserAdress(null);
+            }
+        }
 
         return $this;
     }

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProductCategoryRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -28,6 +30,14 @@ class ProductCategory
 
     #[ORM\Column]
     private ?\DateTimeImmutable $deleted_at = null;
+
+    #[ORM\ManyToMany(targetEntity: Product::class, mappedBy: 'category_id')]
+    private Collection $product_id;
+
+    public function __construct()
+    {
+        $this->product_id = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -90,6 +100,33 @@ class ProductCategory
     public function setDeletedAt(\DateTimeImmutable $deleted_at): static
     {
         $this->deleted_at = $deleted_at;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Product>
+     */
+    public function getProductId(): Collection
+    {
+        return $this->product_id;
+    }
+
+    public function addProductId(Product $productId): static
+    {
+        if (!$this->product_id->contains($productId)) {
+            $this->product_id->add($productId);
+            $productId->addCategoryId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProductId(Product $productId): static
+    {
+        if ($this->product_id->removeElement($productId)) {
+            $productId->removeCategoryId($this);
+        }
 
         return $this;
     }

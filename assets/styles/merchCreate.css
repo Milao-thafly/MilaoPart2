@@ -24,6 +24,7 @@ form {
 
 label{
     color: white;
+    display: block;
 }
 input {
     border-radius: 20px;

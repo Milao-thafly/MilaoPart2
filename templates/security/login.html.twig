@@ -1,60 +1,58 @@
 {% extends 'base.html.twig' %}
 {% block current_css %}
-          {{ encore_entry_link_tags('app') }}
+	{{ encore_entry_link_tags('app') }}
 {% endblock %}
 
 {% block title %}
-Se connecter|
-{{ parent() }}
+	Se connecter|
+	{{ parent() }}
 {% endblock %}
-
 
 
 {% block body %}
-		<div class="container">
-			<form action="{{ path('app_security')}}" method="post" class="formLog">
+	<div class="container">
+		<form action="{{ path('app_security')}}" method="post" class="formLog">
 
-				{% if error %}
-					<div class="alert" role="alert">{{
+			{% if error %}
+				<div class="alert" role="alert">{{
                     error.messageKey|trans(error.messageData, 'security')
                 }}
-					</div>
-				{% endif %}
-	{% if app.user %}
+				</div>
+			{% endif %}
+			{% if app.user %}
 
-		<div class="mb-3">
-			You are logged in as
-			{{ app.user.username }},
-			<a href="{{ path('app_homepage') }}">Deconnexion</a>
-		</div>
+				<div class="mb-3">
+					You are logged in as
+					{{ app.user.username }},
+					<a href="{{ path('user_logout') }}">Deconnexion</a>
+				</div>
 
-	{% else %}
+			{% else %}
 
-					<h1 class="title">
-						Se connecter
-					</h1>
+				<h1 class="title">
+					Se connecter
+				</h1>
 
-					<div>
+				<div>
 					<label for="username" class="form-label">
 						Username
 					</label>
-					<input type="text" id="username" name="_username" value="{{ last_username }}"
-					name="email" id="inputEmail" class="form__input" autocomplete="email" required autofocus/>
-					</div>
+					<input type="text" id="username" name="_username" value="{{ last_username }}" name="email" id="inputEmail" class="form__input" autocomplete="email" required autofocus/>
+				</div>
 
-					<label for="password" class="form-label">
-						Mot de passe
-					</label>
-					<input type="password" id="password" name="_password" class="form-control" autocomplete="current-password" required>
+				<label for="password" class="form-label">
+					Mot de passe
+				</label>
+				<input type="password" id="password" name="_password" class="form-control" autocomplete="current-password" required>
 
-					<a href="#" class="forgot_link">Mot de passe oublié ?</a>
-					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<a href="#" class="forgot_link">Mot de passe oublié ?</a>
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
 
-					<div class="subLog">
-						<button class="btnLog" type="submit">
-							Se connecter</button>
-					</div>
-				</form>
-	{% endif %}
-{% endblock %}
+				<div class="subLog">
+					<button class="btnLog" type="submit">
+						Se connecter</button>
+				</div>
+			</form>
+		{% endif %}
+	{% endblock %}

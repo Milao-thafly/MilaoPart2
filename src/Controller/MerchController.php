@@ -68,16 +68,15 @@ class MerchController extends AbstractController
 
     #[Route('/merch/edit/{id}', name: 'home_editProduct', methods: 'GET|POST')]
     #[IsGranted('ROLE_ADMIN')]
-    public function editProduct(Product $product, Request $request, ProductRepository $repoProduct, EntityManagerInterface $em, int $id)
+    public function editProduct(Product $product, Request $request, ProductRepository $repoProduct, EntityManagerInterface $em)
     {
-        $currentUser = $this->getUser() -> getId();
+        $currentUserId = $this->getUser() -> getId();
 
         // if ($currentUser !== $product->getUser_Id()) {
         //     throw $this->createAccessDeniedException();
         //     $this->addFlash('error', 'Vous n/etes pas connecté');
         // }
 
-        $product = $repoProduct->find($id);
 
         $form = $this->createForm(EditFormType::class, $product);
         $form->handleRequest($request);
@@ -89,8 +88,8 @@ class MerchController extends AbstractController
         }
 
         return $this->render('merch/merchEdit.html.twig', [
-            'form' => $form->createView(),
-            'id' => $id
+            'form' => $form,
+            'id' => $product->getId()
         ]);
     }
 
@@ -118,8 +117,8 @@ class MerchController extends AbstractController
 
         return $this->redirectToRoute('app_merch');
     }
-    #[Route('/merch/read/{id}', name: 'merch_readProduct', methods: 'GET|POST')]
-    public function show(ProductRepository $repoProduct, Product $product,int $id): Response
+    #[Route('/merch/read/{id}', name: 'merch_readProduct', methods: 'GET')]
+    public function show(ProductRepository $repoProduct, Product $product): Response
     {
         $products = $repoProduct->find($product);
         return $this->render('merch/merchRead.html.twig', [

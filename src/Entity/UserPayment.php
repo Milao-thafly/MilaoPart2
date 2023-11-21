@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserPaymentRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -21,8 +23,6 @@ class UserPayment
     #[ORM\Column(length: 255)]
     private ?string $payment_type = null;
 
-    #[ORM\Column]
-    private ?int $user_id = null;
 
     #[ORM\Column(length: 255)]
     private ?string $provider = null;
@@ -32,6 +32,14 @@ class UserPayment
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $expiry = null;
+
+    #[ORM\OneToMany(mappedBy: 'user_payment', targetEntity: User::class)]
+    private Collection $user_id;
+
+    public function __construct()
+    {
+        $this->user_id = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -50,17 +58,6 @@ class UserPayment
         return $this;
     }
 
-    public function getUserId(): ?int
-    {
-        return $this->user_id;
-    }
-
-    public function setUserId(int $user_id): static
-    {
-        $this->user_id = $user_id;
-
-        return $this;
-    }
 
     public function getProvider(): ?string
     {
@@ -94,6 +91,36 @@ class UserPayment
     public function setExpiry(\DateTimeInterface $expiry): static
     {
         $this->expiry = $expiry;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUserId(): Collection
+    {
+        return $this->user_id;
+    }
+
+    public function addUserId(User $userId): static
+    {
+        if (!$this->user_id->contains($userId)) {
+            $this->user_id->add($userId);
+            $userId->setUserPayment($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUserId(User $userId): static
+    {
+        if ($this->user_id->removeElement($userId)) {
+            // set the owning side to null (unless already changed)
+            if ($userId->getUserPayment() === $this) {
+                $userId->setUserPayment(null);
+            }
+        }
 
         return $this;
     }

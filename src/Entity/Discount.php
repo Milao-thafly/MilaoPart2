@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\DiscountRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -34,6 +36,14 @@ class Discount
 
     #[ORM\Column]
     private ?\DateTimeImmutable $deleted_at = null;
+
+    #[ORM\ManyToMany(targetEntity: Product::class, mappedBy: 'discount_id')]
+    private Collection $product_id;
+
+    public function __construct()
+    {
+        $this->product_id = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -120,6 +130,33 @@ class Discount
     public function setDeletedAt(\DateTimeImmutable $deleted_at): static
     {
         $this->deleted_at = $deleted_at;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Product>
+     */
+    public function getProductId(): Collection
+    {
+        return $this->product_id;
+    }
+
+    public function addProductId(Product $productId): static
+    {
+        if (!$this->product_id->contains($productId)) {
+            $this->product_id->add($productId);
+            $productId->addDiscountId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProductId(Product $productId): static
+    {
+        if ($this->product_id->removeElement($productId)) {
+            $productId->removeDiscountId($this);
+        }
 
         return $this;
     }

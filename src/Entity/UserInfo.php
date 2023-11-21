@@ -3,10 +3,12 @@
 namespace App\Entity;
 
 use App\Repository\UserInfoRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: UserInfoRepository::class)]
-class UserInfo
+class Userinfo
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -28,8 +30,13 @@ class UserInfo
     #[ORM\Column(length: 255)]
     private ?string $city = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $user = null;
+    #[ORM\OneToMany(mappedBy: 'user_info', targetEntity: User::class)]
+    private Collection $user_id;
+
+    public function __construct()
+    {
+        $this->user_id = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -96,15 +103,35 @@ class UserInfo
         return $this;
     }
 
-    public function getUser(): ?string
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUserId(): Collection
     {
-        return $this->user;
+        return $this->user_id;
     }
 
-    public function setUser(string $user): static
+    public function addUserId(User $userId): static
     {
-        $this->user = $user;
+        if (!$this->user_id->contains($userId)) {
+            $this->user_id->add($userId);
+            $userId->setUserInfo($this);
+        }
 
         return $this;
     }
+
+    public function removeUserId(User $userId): static
+    {
+        if ($this->user_id->removeElement($userId)) {
+            // set the owning side to null (unless already changed)
+            if ($userId->getUserInfo() === $this) {
+                $userId->setUserInfo(null);
+            }
+        }
+
+        return $this;
+    }
+
+
 }
